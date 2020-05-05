@@ -155,8 +155,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Education History</label>
     <nameField>
+        <displayFormat>EH - {0000}</displayFormat>
         <label>Education History Name</label>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Education History</pluralLabel>
     <searchLayouts/>
@@ -344,4 +345,9 @@
         <trackTrending>false</trackTrending>
         <type>Date</type>
     </fields>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
 </CustomObject>

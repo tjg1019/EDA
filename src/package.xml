@@ -559,6 +559,19 @@
         <members>Trigger_Handler__c.Trigger_Action__c</members>
         <members>Trigger_Handler__c.User_Managed__c</members>
         <members>Trigger_Handler__c.Usernames_to_Exclude__c</members>
+        <members>Education_History__c.Account__c</members>
+        <members>Education_History__c.Class_Rank_Scale__c</members>
+        <members>Education_History__c.Class_Rank_Weighted__c</members>
+        <members>Education_History__c.Class_Rank__c</members>
+        <members>Education_History__c.Contact__c</members>
+        <members>Education_History__c.Degree_Earned__c</members>
+        <members>Education_History__c.Details__c</members>
+        <members>Education_History__c.From_Date__c</members>
+        <members>Education_History__c.GPA_Scale_Reporting__c</members>
+        <members>Education_History__c.GPA_Weighted__c</members>
+        <members>Education_History__c.GPA__c</members>
+        <members>Education_History__c.Graduation_Date__c</members>
+        <members>Education_History__c.To_Date__c</members>
         <name>CustomField</name>
     </types>
     <types>
