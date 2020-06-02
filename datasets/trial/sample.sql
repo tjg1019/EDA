@@ -123,18 +123,18 @@ CREATE TABLE "Contact" (
 	hed__primary_organization__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "Contact" VALUES('0033600000DkVdFAAV','Michael','Brown','false','false','false','','','','','false','false','','','false','false','false','false','false','Male','','false','','false','','','','Home','','','','','','','','false','0013600000L8eNqAAJ','','','','','','','','','a0H1Q00000eJ2GDUA0','');
-INSERT INTO "Contact" VALUES('0033600000DkVdHAAV','John','Williams','false','false','false','','','','','false','false','','','false','false','false','false','false','Male','','false','','false','','','','Home','','','','','','','','false','0013600000L8eNsAAJ','0013600000L8dxQAAR','','','','','','','0013600000L9jcxAAB','','0013600000L8dxZAAR');
-INSERT INTO "Contact" VALUES('0033600000DkW5oAAF','William','Williams','false','false','false','','','United States','United States','false','false','','','false','false','false','true','false','Male','','false','','false','','Home','University','Work','','','Home','XXX-XX-5555','wwilliams@connectedu.edu','','','true','0013600000L8ZgyAAF','0013600000L8dxaAAB','','','','','','a0036000003iujmAAA','0013600000L9jcxAAB','','0013600000L8dxZAAR');
-INSERT INTO "Contact" VALUES('0033600000DkW5qAAF','Thomas','Towne','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L8Zh0AAF','','','','','','','','','','');
-INSERT INTO "Contact" VALUES('0033600000DkW5sAAF','Jake','Johnson','false','false','false','','','United States','United States','false','false','','','false','false','false','false','false','Male','','false','','false','','Mobile','University','Home','','','','XXX-XX-5555','jjohnson@example.com','','','false','0013600000L8eZ1AAJ','','0013600000L8dxVAAR','','','','','','','','0013600000L8dxOAAR');
-INSERT INTO "Contact" VALUES('0033600000DkW5tAAF','William','Chen','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L8eZ2AAJ','','','','','','','','','','');
-INSERT INTO "Contact" VALUES('0033600000DkW5wAAF','Angela','Andrews','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L8eZ5AAJ','','','','','','','','','','');
-INSERT INTO "Contact" VALUES('0033600000DkW5xAAF','Tracy','Durant','false','false','false','','','','','false','false','','','false','false','false','false','false','Female','','false','','false','','','','Home','','','','','','','','false','0013600000L8eZ6AAJ','0013600000L8dxQAAR','','','','','','','0013600000L9jcxAAB','','0013600000L8dxZAAR');
-INSERT INTO "Contact" VALUES('0033600000DlAc1AAF','Richard','Brown','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L9GjlAAF','','','','','','','','','','');
-INSERT INTO "Contact" VALUES('0033600000DlAa9AAF','Janet','Brown','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L9GiEAAV','','','','','','','','','','');
-INSERT INTO "Contact" VALUES('0033600000DlhrRAAR','Robert','Brown','false','false','false','','','United States of America (the)','United States of America (the)','false','false','','','false','false','false','true','false','Male','','false','','false','','','','Home','','','','XXX-XX-5555','','','','false','0013600000L9mbHAAR','0013600000L8dxJAAR','','0013600000L8dxdAAB','','','','','','','0013600000L8dxUAAR');
-INSERT INTO "Contact" VALUES('0033600001knoH0AAI','Mary','Jefferson','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','','','','','','','','','false','0013600000L8dxYAAR','','','','','','','','','','');
+-- INSERT INTO "Contact" VALUES('0033600000DkVdFAAV','Michael','Brown','false','false','false','','','','','false','false','','','false','false','false','false','false','Male','','false','','false','','','','Home','','','','','','','','false','0013600000L8eNqAAJ','','','','','','','','','a0H1Q00000eJ2GDUA0','');
+-- INSERT INTO "Contact" VALUES('0033600000DkVdHAAV','John','Williams','false','false','false','','','','','false','false','','','false','false','false','false','false','Male','','false','','false','','','','Home','','','','','','','','false','0013600000L8eNsAAJ','0013600000L8dxQAAR','','','','','','','0013600000L9jcxAAB','','0013600000L8dxZAAR');
+-- INSERT INTO "Contact" VALUES('0033600000DkW5oAAF','William','Williams','false','false','false','','','United States','United States','false','false','','','false','false','false','true','false','Male','','false','','false','','Home','University','Work','','','Home','XXX-XX-5555','wwilliams@connectedu.edu','','','true','0013600000L8ZgyAAF','0013600000L8dxaAAB','','','','','','a0036000003iujmAAA','0013600000L9jcxAAB','','0013600000L8dxZAAR');
+-- INSERT INTO "Contact" VALUES('0033600000DkW5qAAF','Thomas','Towne','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L8Zh0AAF','','','','','','','','','','');
+-- INSERT INTO "Contact" VALUES('0033600000DkW5sAAF','Jake','Johnson','false','false','false','','','United States','United States','false','false','','','false','false','false','false','false','Male','','false','','false','','Mobile','University','Home','','','','XXX-XX-5555','jjohnson@example.com','','','false','0013600000L8eZ1AAJ','','0013600000L8dxVAAR','','','','','','','','0013600000L8dxOAAR');
+-- INSERT INTO "Contact" VALUES('0033600000DkW5tAAF','William','Chen','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L8eZ2AAJ','','','','','','','','','','');
+-- INSERT INTO "Contact" VALUES('0033600000DkW5wAAF','Angela','Andrews','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L8eZ5AAJ','','','','','','','','','','');
+-- INSERT INTO "Contact" VALUES('0033600000DkW5xAAF','Tracy','Durant','false','false','false','','','','','false','false','','','false','false','false','false','false','Female','','false','','false','','','','Home','','','','','','','','false','0013600000L8eZ6AAJ','0013600000L8dxQAAR','','','','','','','0013600000L9jcxAAB','','0013600000L8dxZAAR');
+-- INSERT INTO "Contact" VALUES('0033600000DlAc1AAF','Richard','Brown','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L9GjlAAF','','','','','','','','','','');
+-- INSERT INTO "Contact" VALUES('0033600000DlAa9AAF','Janet','Brown','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','Home','','','','','','','','false','0013600000L9GiEAAV','','','','','','','','','','');
+-- INSERT INTO "Contact" VALUES('0033600000DlhrRAAR','Robert','Brown','false','false','false','','','United States of America (the)','United States of America (the)','false','false','','','false','false','false','true','false','Male','','false','','false','','','','Home','','','','XXX-XX-5555','','','','false','0013600000L9mbHAAR','0013600000L8dxJAAR','','0013600000L8dxdAAB','','','','','','','0013600000L8dxUAAR');
+-- INSERT INTO "Contact" VALUES('0033600001knoH0AAI','Mary','Jefferson','false','false','false','','','','','false','false','','','false','false','false','false','false','','','false','','false','','','','','','','','','','','','false','0013600000L8dxYAAR','','','','','','','','','','');
 CREATE TABLE "hed__Address__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"hed__Address_Type__c" VARCHAR(255), 
@@ -157,9 +157,9 @@ CREATE TABLE "hed__Address__c" (
 	hed__parent_contact__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Address__c" VALUES('a0036000003iujlAAA','Home','true','','2016-05-17','Pleasant Grove','United States','84062','Utah','','128 East main street','','','','','','','0013600000L8ZgyAAF','');
-INSERT INTO "hed__Address__c" VALUES('a0036000003iujmAAA','Work','false','','2016-05-17','Pleasant Grove','United States','84062','Utah','','128 East main street','','','','','','','0013600000L8ZgyAAF','');
-INSERT INTO "hed__Address__c" VALUES('a0036000003iui1AAA','Home','true','','2016-05-17','Beacon','United States of America','12509','NY','','100 Main St','','','','','','','0013600000L8dxdAAB','');
+-- INSERT INTO "hed__Address__c" VALUES('a0036000003iujlAAA','Home','true','','2016-05-17','Pleasant Grove','United States','84062','Utah','','128 East main street','','','','','','','0013600000L8ZgyAAF','');
+-- INSERT INTO "hed__Address__c" VALUES('a0036000003iujmAAA','Work','false','','2016-05-17','Pleasant Grove','United States','84062','Utah','','128 East main street','','','','','','','0013600000L8ZgyAAF','');
+-- INSERT INTO "hed__Address__c" VALUES('a0036000003iui1AAA','Home','true','','2016-05-17','Beacon','United States of America','12509','NY','','100 Main St','','','','','','','0013600000L8dxdAAB','');
 CREATE TABLE "hed__Affiliation__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"hed__Description__c" VARCHAR(255), 
@@ -267,8 +267,8 @@ CREATE TABLE "hed__Contact_Language__c" (
 	hed__language__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Contact_Language__c" VALUES('a0G1Q00000kQ567UAC','Intermediate','false','0033600000DkVdFAAV','a0H1Q00000eJ2GNUA0');
-INSERT INTO "hed__Contact_Language__c" VALUES('a0G1Q00000kQ54BUAS','Fluent','true','0033600000DkVdFAAV','a0H1Q00000eJ2GDUA0');
+-- INSERT INTO "hed__Contact_Language__c" VALUES('a0G1Q00000kQ567UAC','Intermediate','false','0033600000DkVdFAAV','a0H1Q00000eJ2GNUA0');
+-- INSERT INTO "hed__Contact_Language__c" VALUES('a0G1Q00000kQ54BUAS','Fluent','true','0033600000DkVdFAAV','a0H1Q00000eJ2GDUA0');
 CREATE TABLE "hed__Course_Enrollment__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"RecordTypeId" VARCHAR(255), 
@@ -282,13 +282,13 @@ CREATE TABLE "hed__Course_Enrollment__c" (
 	hed__program_enrollment__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkoOAAS','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZfAAI','a0836000005H9tyAAC');
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkpMAAS','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZkAAI','a0836000005H9tyAAC');
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkqZAAS','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZVAAY','a0836000005H9tyAAC');
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkxpAAC','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZuAAI','a0836000005H9tyAAC');
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a033600001cpP4IAAU','01236000000OIx9AAG','','','','0013600000L8dxYAAR','a013600000nbM08AAE','0033600001knoH0AAI','a0436000003gpZVAAY','');
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a031Q00001uNjxxQAC','01236000000OIx4AAG','','','','0013600000L8dxaAAB','','0033600000DkW5wAAF','a041Q00000nRJPFQA4','a081Q00001GcfsEQAR');
-INSERT INTO "hed__Course_Enrollment__c" VALUES('a031Q00001uNjxsQAC','01236000000OIx9AAG','','','','0013600000L8dxYAAR','a011Q00000xdgLSQAY','0033600000DkW5oAAF','a041Q00000nRJPFQA4','');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkoOAAS','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZfAAI','a0836000005H9tyAAC');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkpMAAS','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZkAAI','a0836000005H9tyAAC');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkqZAAS','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZVAAY','a0836000005H9tyAAC');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a0336000004XkxpAAC','01236000000OIx4AAG','3.0','','','0013600000L8dxaAAB','','0033600000DkW5oAAF','a0436000003gpZuAAI','a0836000005H9tyAAC');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a033600001cpP4IAAU','01236000000OIx9AAG','','','','0013600000L8dxYAAR','a013600000nbM08AAE','0033600001knoH0AAI','a0436000003gpZVAAY','');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a031Q00001uNjxxQAC','01236000000OIx4AAG','','','','0013600000L8dxaAAB','','0033600000DkW5wAAF','a041Q00000nRJPFQA4','a081Q00001GcfsEQAR');
+-- INSERT INTO "hed__Course_Enrollment__c" VALUES('a031Q00001uNjxsQAC','01236000000OIx9AAG','','','','0013600000L8dxYAAR','a011Q00000xdgLSQAY','0033600000DkW5oAAF','a041Q00000nRJPFQA4','');
 CREATE TABLE "hed__Course_Enrollment__c_rt_mapping" (
 	record_type_id VARCHAR(18) NOT NULL, 
 	developer_name VARCHAR(255), 
@@ -328,17 +328,17 @@ CREATE TABLE "hed__Course_Offering__c" (
 	hed__time_block__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpitAAA','ENG 260 Fall 2012','','2012-12-14','1','2012-09-03','a0536000004UOz0AAG','','','a0C36000001hWo4EAE','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZkAAI','APMA 420 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UOyqAAG','','','a0C36000001hWmAEAU','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpebAAA','ENG 230 Fall 2012','','2012-12-14','1','2012-09-03','a0536000004UOygAAG','','','a0C36000001hWo4EAE','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZVAAY','APMA 401 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UTpQAAW','','0033600001knoH0AAI','a0C36000001hWmAEAU','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpegAAA','ENG 260 Fall 2006','','2006-12-15','1','2006-09-04','a0536000004UOz0AAG','','','a0C36000001hWkgEAE','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZfAAI','APMA 410 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UTp6AAG','','','a0C36000001hWmAEAU','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpeRAAQ','ENG 220 Fall 2012','','2012-12-14','1','2012-09-03','a0536000004UTpGAAW','','','a0C36000001hWo4EAE','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZuAAI','APMA 430 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UTpLAAW','','','a0C36000001hWmAEAU','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpeWAAQ','ENG 230 Fall 2006','','2006-12-15','1','2006-09-04','a0536000004UOygAAG','','','a0C36000001hWkgEAE','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpeMAAQ','ENG 220 Fall 2006','','2006-12-15','1','2006-09-04','a0536000004UTpGAAW','','','a0C36000001hWkgEAE','');
-INSERT INTO "hed__Course_Offering__c" VALUES('a041Q00000nRJPFQA4','APMA 430 Fall 2019','25.0','2020-03-09','','2019-11-11','a0536000004UTp6AAG','a0I1Q00000SCsqNUAT','0033600000DkW5oAAF','a0C1Q00000IlVTDUA3','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpitAAA','ENG 260 Fall 2012','','2012-12-14','1','2012-09-03','a0536000004UOz0AAG','','','a0C36000001hWo4EAE','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZkAAI','APMA 420 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UOyqAAG','','','a0C36000001hWmAEAU','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpebAAA','ENG 230 Fall 2012','','2012-12-14','1','2012-09-03','a0536000004UOygAAG','','','a0C36000001hWo4EAE','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZVAAY','APMA 401 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UTpQAAW','','0033600001knoH0AAI','a0C36000001hWmAEAU','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpegAAA','ENG 260 Fall 2006','','2006-12-15','1','2006-09-04','a0536000004UOz0AAG','','','a0C36000001hWkgEAE','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZfAAI','APMA 410 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UTp6AAG','','','a0C36000001hWmAEAU','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpeRAAQ','ENG 220 Fall 2012','','2012-12-14','1','2012-09-03','a0536000004UTpGAAW','','','a0C36000001hWo4EAE','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpZuAAI','APMA 430 Spring 2018','','2016-05-20','1','2016-01-04','a0536000004UTpLAAW','','','a0C36000001hWmAEAU','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpeWAAQ','ENG 230 Fall 2006','','2006-12-15','1','2006-09-04','a0536000004UOygAAG','','','a0C36000001hWkgEAE','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a0436000003gpeMAAQ','ENG 220 Fall 2006','','2006-12-15','1','2006-09-04','a0536000004UTpGAAW','','','a0C36000001hWkgEAE','');
+-- INSERT INTO "hed__Course_Offering__c" VALUES('a041Q00000nRJPFQA4','APMA 430 Fall 2019','25.0','2020-03-09','','2019-11-11','a0536000004UTp6AAG','a0I1Q00000SCsqNUAT','0033600000DkW5oAAF','a0C1Q00000IlVTDUA3','');
 CREATE TABLE "hed__Course__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -349,13 +349,13 @@ CREATE TABLE "hed__Course__c" (
 	hed__account__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Course__c" VALUES('a0536000004UOz0AAG','Great Books of the Western World','ENG 260','3.0','','','0013600000L8dxVAAR');
-INSERT INTO "hed__Course__c" VALUES('a0536000004UOyqAAG','Applied functional analysis','APMA 420','3.0','','','0013600000L8dxYAAR');
-INSERT INTO "hed__Course__c" VALUES('a0536000004UOygAAG','American Literature','ENG 230','3.0','','','0013600000L8dxVAAR');
-INSERT INTO "hed__Course__c" VALUES('a0536000004UTpGAAW','Introduction to Literary Studies','ENG 220','3.0','','','0013600000L8dxVAAR');
-INSERT INTO "hed__Course__c" VALUES('a0536000004UTpQAAW','Principles of applied mathematics','APMA 401','3.0','','','0013600000L8dxYAAR');
-INSERT INTO "hed__Course__c" VALUES('a0536000004UTpLAAW','Partial differential equations','APMA 430','3.0','','','0013600000L8dxYAAR');
-INSERT INTO "hed__Course__c" VALUES('a0536000004UTp6AAG','Introduction to dynamical systems','APMA 410','3.0','','','0013600000L8dxYAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UOz0AAG','Great Books of the Western World','ENG 260','3.0','','','0013600000L8dxVAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UOyqAAG','Applied functional analysis','APMA 420','3.0','','','0013600000L8dxYAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UOygAAG','American Literature','ENG 230','3.0','','','0013600000L8dxVAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UTpGAAW','Introduction to Literary Studies','ENG 220','3.0','','','0013600000L8dxVAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UTpQAAW','Principles of applied mathematics','APMA 401','3.0','','','0013600000L8dxYAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UTpLAAW','Partial differential equations','APMA 430','3.0','','','0013600000L8dxYAAR');
+-- INSERT INTO "hed__Course__c" VALUES('a0536000004UTp6AAG','Introduction to dynamical systems','APMA 410','3.0','','','0013600000L8dxYAAR');
 CREATE TABLE "hed__Error__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"hed__Context_Type__c" VARCHAR(255), 
@@ -453,24 +453,24 @@ CREATE TABLE "hed__Relationship__c" (
 	hed__related_contact__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OngiEAC','','false','false','Current','Husband','0033600000DlAa9AAF','a0B36000002OngjEAC','0033600000DlAc1AAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OngjEAC','','false','true','Current','Wife','0033600000DlAc1AAF','a0B36000002OngiEAC','0033600000DlAa9AAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onq6EAC','','false','false','Current','Son','0033600000DkW5xAAF','a0B36000002Onq7EAC','0033600000DkW5oAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onq7EAC','','false','true','Current','Mother','0033600000DkW5oAAF','a0B36000002Onq6EAC','0033600000DkW5xAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002On59EAC','','false','false','Former','Advisee','0033600000DkW5wAAF','a0B36000002On5AEAS','0033600000DkW5sAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002On5AEAS','','false','true','Former','Advisor','0033600000DkW5sAAF','a0B36000002On59EAC','0033600000DkW5wAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnbbEAC','','false','false','Current','Advisor','0033600000DkW5sAAF','a0B36000002OnbcEAC','0033600000DkW5qAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnbcEAC','','false','true','Current','Advisee','0033600000DkW5qAAF','a0B36000002OnbbEAC','0033600000DkW5sAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhvEAC','','false','false','Former','Wife','0033600000DkVdHAAV','a0B36000002OnhwEAC','0033600000DkW5xAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhwEAC','','false','true','Former','Husband','0033600000DkW5xAAF','a0B36000002OnhvEAC','0033600000DkVdHAAV');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Oni5EAC','','true','false','Current','Father','0033600000DkVdFAAV','a0B36000002Oni6EAC','0033600000DlAc1AAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Oni6EAC','','false','true','Current','Son','0033600000DlAc1AAF','a0B36000002Oni5EAC','0033600000DkVdFAAV');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhqEAC','','false','false','Current','Son','0033600000DkVdHAAV','a0B36000002OnhrEAC','0033600000DkW5oAAF');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhrEAC','','false','true','Current','Father','0033600000DkW5oAAF','a0B36000002OnhqEAC','0033600000DkVdHAAV');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OniyEAC','','false','false','Current','Son','0033600000DkVdFAAV','a0B36000002OnizEAC','0033600000DlhrRAAR');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnizEAC','','false','true','Current','Father','0033600000DlhrRAAR','a0B36000002OniyEAC','0033600000DkVdFAAV');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onh2EAC','','false','false','Current','Son','0033600000DlAa9AAF','a0B36000002Onh3EAC','0033600000DkVdFAAV');
-INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onh3EAC','','false','true','Current','Mother','0033600000DkVdFAAV','a0B36000002Onh2EAC','0033600000DlAa9AAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OngiEAC','','false','false','Current','Husband','0033600000DlAa9AAF','a0B36000002OngjEAC','0033600000DlAc1AAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OngjEAC','','false','true','Current','Wife','0033600000DlAc1AAF','a0B36000002OngiEAC','0033600000DlAa9AAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onq6EAC','','false','false','Current','Son','0033600000DkW5xAAF','a0B36000002Onq7EAC','0033600000DkW5oAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onq7EAC','','false','true','Current','Mother','0033600000DkW5oAAF','a0B36000002Onq6EAC','0033600000DkW5xAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002On59EAC','','false','false','Former','Advisee','0033600000DkW5wAAF','a0B36000002On5AEAS','0033600000DkW5sAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002On5AEAS','','false','true','Former','Advisor','0033600000DkW5sAAF','a0B36000002On59EAC','0033600000DkW5wAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnbbEAC','','false','false','Current','Advisor','0033600000DkW5sAAF','a0B36000002OnbcEAC','0033600000DkW5qAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnbcEAC','','false','true','Current','Advisee','0033600000DkW5qAAF','a0B36000002OnbbEAC','0033600000DkW5sAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhvEAC','','false','false','Former','Wife','0033600000DkVdHAAV','a0B36000002OnhwEAC','0033600000DkW5xAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhwEAC','','false','true','Former','Husband','0033600000DkW5xAAF','a0B36000002OnhvEAC','0033600000DkVdHAAV');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Oni5EAC','','true','false','Current','Father','0033600000DkVdFAAV','a0B36000002Oni6EAC','0033600000DlAc1AAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Oni6EAC','','false','true','Current','Son','0033600000DlAc1AAF','a0B36000002Oni5EAC','0033600000DkVdFAAV');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhqEAC','','false','false','Current','Son','0033600000DkVdHAAV','a0B36000002OnhrEAC','0033600000DkW5oAAF');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnhrEAC','','false','true','Current','Father','0033600000DkW5oAAF','a0B36000002OnhqEAC','0033600000DkVdHAAV');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OniyEAC','','false','false','Current','Son','0033600000DkVdFAAV','a0B36000002OnizEAC','0033600000DlhrRAAR');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002OnizEAC','','false','true','Current','Father','0033600000DlhrRAAR','a0B36000002OniyEAC','0033600000DkVdFAAV');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onh2EAC','','false','false','Current','Son','0033600000DlAa9AAF','a0B36000002Onh3EAC','0033600000DkVdFAAV');
+-- INSERT INTO "hed__Relationship__c" VALUES('a0B36000002Onh3EAC','','false','true','Current','Mother','0033600000DkVdFAAV','a0B36000002Onh2EAC','0033600000DlAa9AAF');
 CREATE TABLE "hed__Term_Grade__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"hed__Credits_Attempted__c" VARCHAR(255), 
@@ -486,8 +486,8 @@ CREATE TABLE "hed__Term_Grade__c" (
 	hed__term__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Term_Grade__c" VALUES('a0K1Q00000XJBGXUA5','','','','','','Pass','Exam Grade','','a031Q00001uNjxxQAC','','a0C1Q00000IlVTDUA3');
-INSERT INTO "hed__Term_Grade__c" VALUES('a0K1Q00000Wc1DuUAJ','','','A+','100.0','100.0','Pass','Mid-Term Grade','','a033600001cpP4IAAU','','a0C36000001hWmAEAU');
+-- INSERT INTO "hed__Term_Grade__c" VALUES('a0K1Q00000XJBGXUA5','','','','','','Pass','Exam Grade','','a031Q00001uNjxxQAC','','a0C1Q00000IlVTDUA3');
+-- INSERT INTO "hed__Term_Grade__c" VALUES('a0K1Q00000Wc1DuUAJ','','','A+','100.0','100.0','Pass','Mid-Term Grade','','a033600001cpP4IAAU','','a0C36000001hWmAEAU');
 CREATE TABLE "hed__Term__c" (
 	sf_id VARCHAR(255) NOT NULL, 
 	"Name" VARCHAR(255), 
@@ -500,10 +500,10 @@ CREATE TABLE "hed__Term__c" (
 	hed__parent_term__c VARCHAR(255), 
 	PRIMARY KEY (sf_id)
 );
-INSERT INTO "hed__Term__c" VALUES('a0C36000001hWkgEAE','Fall 2006','2006-12-15','','','2006-09-04','School Year','0013600000L8ezJAAR','');
-INSERT INTO "hed__Term__c" VALUES('a0C36000001hWo4EAE','Fall 2012','2012-12-14','','','2012-09-03','School Year','0013600000L8ezJAAR','');
-INSERT INTO "hed__Term__c" VALUES('a0C36000001hWmAEAU','Spring 2018','2018-05-20','','','2018-01-04','School Year','0013600000L8ezJAAR','');
-INSERT INTO "hed__Term__c" VALUES('a0C1Q00000IlVTDUA3','Fall 2019','2020-03-09','','','2019-11-11','Semester','0013600000L8ezJAAR','');
+-- INSERT INTO "hed__Term__c" VALUES('a0C36000001hWkgEAE','Fall 2006','2006-12-15','','','2006-09-04','School Year','0013600000L8ezJAAR','');
+-- INSERT INTO "hed__Term__c" VALUES('a0C36000001hWo4EAE','Fall 2012','2012-12-14','','','2012-09-03','School Year','0013600000L8ezJAAR','');
+-- INSERT INTO "hed__Term__c" VALUES('a0C36000001hWmAEAU','Spring 2018','2018-05-20','','','2018-01-04','School Year','0013600000L8ezJAAR','');
+-- INSERT INTO "hed__Term__c" VALUES('a0C1Q00000IlVTDUA3','Fall 2019','2020-03-09','','','2019-11-11','Semester','0013600000L8ezJAAR','');
 CREATE TABLE "hed__Test_Score__c" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
@@ -577,6 +577,10 @@ INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D3600000SbdQhEAJ','a0D3600000Sbd
 INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D3600000SbdQiEAJ','a0D3600000SbdQi','true','false','PPlan_CannotDelete_TDTM','','','1.0','Program_Plan__c','hed','BeforeDelete','false','');
 INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D3600000SbdQjEAJ','a0D3600000SbdQj','true','false','PReq_CannotDelete_TDTM','','','1.0','Plan_Requirement__c','hed','BeforeDelete','false','');
 INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D3600000PXks2EAD','a0D3600000PXks2','true','false','THAN_ClearCache_TDTM','','','2.0','Trigger_Handler__c','hed','AfterInsert;AfterUpdate;AfterDelete','false','');
+INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000aoWAbUAM','a0D1Q00000aoWAb','true','false','TST_CannotDelete_TDTM','','','1.0','Test__c','hed','BeforeDelete','false','');
+INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000aoWAcUAM','a0D1Q00000aoWAc','true','false','FACI_CannotDelete_TDTM','','','1.0','Facility__c','hed','BeforeDelete','false','');
+INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000aoWAdUAM','a0D1Q00000aoWAd','true','false','PREN_CannotDelete_TDTM','','','1.0','Program_Enrollment__c','hed','BeforeDelete','false','');
+INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000aoWAeUAM','a0D1Q00000aoWAe','true','false','TB_CannotDelete_TDTM','','','1.0','Time_Block__c','hed','BeforeDelete','false','');
 INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000YsxCGUAZ','a0D1Q00000YsxCG','true','false','COS_StartEndTime_TDTM','','','1.0','Course_Offering_Schedule__c','hed','BeforeInsert;BeforeUpdate','false','');
 INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000YsxCHUAZ','a0D1Q00000YsxCH','true','false','TB_StartEndTime_TDTM','','','1.0','Time_Block__c','hed','AfterUpdate','false','');
 INSERT INTO "hed__Trigger_Handler__c" VALUES('a0D1Q00000YsxCIUAZ','a0D1Q00000YsxCI','true','false','PREQ_PreventPPlanParent_TDTM','','','1.0','Plan_Requirement__c','hed','AfterInsert;AfterUpdate','false','');
