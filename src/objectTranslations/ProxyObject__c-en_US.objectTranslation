@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Proxy Object</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ProxyObject</value>
+    </caseValues>
+    <layouts>
+        <layout>ProxyObject Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <fields>
+        <help><!-- This represents a stimestamp for this proxy object --></help>
+        <label><!-- Batch Id --></label>
+        <name>BatchId__c</name>
+    </fields>
+    <fields>
+        <help><!-- External Id coming from the third party system --></help>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- FinalJSON --></label>
+        <name>FinalJSON__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field stores a JSON format data structure which belongs to the proxy object. --></help>
+        <label><!-- JSON --></label>
+        <name>JSON__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field links this proxy object to its parent object --></help>
+        <label><!-- Parent --></label>
+        <name>Parent__c</name>
+        <relationshipLabel><!-- ProxyObject --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Denotes whether this has been previously processed. --></help>
+        <label><!-- Processed --></label>
+        <name>Processed__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the third party system where the data is coming from --></help>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <help><!-- The entity type this object represents --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+</CustomObjectTranslation>

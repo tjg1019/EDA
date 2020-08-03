@@ -11,8 +11,8 @@
         <members>ACCT_IndividualAccounts_TDTM</members>
         <members>ACCT_IndividualAccounts_TEST</members>
         <members>ADDR_Account_TDTM</members>
-        <members>ADDR_Addresses_TDTM</members>
         <members>ADDR_Address_TEST</members>
+        <members>ADDR_Addresses_TDTM</members>
         <members>ADDR_Addresses_UTIL</members>
         <members>ADDR_AdminAcc_TEST</members>
         <members>ADDR_CannotDelete_TDTM</members>
@@ -86,6 +86,7 @@
         <members>COUR_CannotDelete_TEST</members>
         <members>COUR_DescriptionCopy_BATCH</members>
         <members>COUR_DescriptionCopy_TEST</members>
+        <members>DataMapper</members>
         <members>ERR_AsyncErrors</members>
         <members>ERR_AsyncErrors_SCHED</members>
         <members>ERR_AsyncErrors_TEST</members>
@@ -99,6 +100,8 @@
         <members>ERR_Notifier</members>
         <members>FACI_CannotDelete_TDTM</members>
         <members>FACI_CannotDelete_TEST</members>
+        <members>JSONBuilder</members>
+        <members>ObjectSerializer</members>
         <members>PPlan_CannotDelete_TDTM</members>
         <members>PPlan_CannotDelete_TEST</members>
         <members>PPlan_Primary_TDTM</members>
@@ -128,6 +131,8 @@
         <members>STG_Courses_TEST</members>
         <members>STG_InstallScript</members>
         <members>STG_InstallScript_TEST</members>
+        <members>SampleBatch</members>
+        <members>StudentContact</members>
         <members>TB_CannotDelete_TDTM</members>
         <members>TB_CannotDelete_TEST</members>
         <members>TB_StartEndTime_TDTM</members>
@@ -180,6 +185,7 @@
         <members>UTIL_SortContact_TEST</members>
         <members>UTIL_UnitTestData_API</members>
         <members>UTIL_UnitTestData_TEST</members>
+        <members>scriptAddMDT</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -358,8 +364,9 @@
         <members>Case.Occurrence_Date__c</members>
         <members>Contact.AlternateEmail__c</members>
         <members>Contact.Chosen_Full_Name__c</members>
-        <members>Contact.Citizenship__c</members>
         <members>Contact.Citizenship_Status__c</members>
+        <members>Contact.Citizenship__c</members>
+        <members>Contact.Contact_JSON__c</members>
         <members>Contact.Country_of_Origin__c</members>
         <members>Contact.Current_Address__c</members>
         <members>Contact.Date_Deceased__c</members>
@@ -539,6 +546,14 @@
         <members>Program_Plan__c.Status__c</members>
         <members>Program_Plan__c.Total_Required_Credits__c</members>
         <members>Program_Plan__c.Version__c</members>
+        <members>ProxyObject__c.BatchId__c</members>
+        <members>ProxyObject__c.ExternalId__c</members>
+        <members>ProxyObject__c.FinalJSON__c</members>
+        <members>ProxyObject__c.JSON__c</members>
+        <members>ProxyObject__c.Parent__c</members>
+        <members>ProxyObject__c.Processed__c</members>
+        <members>ProxyObject__c.Source__c</members>
+        <members>ProxyObject__c.Type__c</members>
         <members>Relationship_Auto_Create__c.Campaign_Types__c</members>
         <members>Relationship_Auto_Create__c.Field__c</members>
         <members>Relationship_Auto_Create__c.Object__c</members>
@@ -598,12 +613,20 @@
         <members>Trigger_Handler__c.Trigger_Action__c</members>
         <members>Trigger_Handler__c.User_Managed__c</members>
         <members>Trigger_Handler__c.Usernames_to_Exclude__c</members>
+        <members>JSONBuilderSchema__mdt.Mapped_To__c</members>
+        <members>JSONBuilderSchema__mdt.Object__c</members>
+        <members>JSONBuilderSchema__mdt.Order__c</members>
+        <members>JSONBuilderSchema__mdt.Position__c</members>
+        <members>JSONBuilderSchema__mdt.SFDC_Field_Name__c</members>
+        <members>JSONBuilderSchema__mdt.SourceAttribute__c</members>
+        <members>JSONBuilderSchema__mdt.SourceType__c</members>
+        <members>JSONBuilderSchema__mdt.Source__c</members>
+        <members>JSONBuilderSchema__mdt.Structure__c</members>
         <name>CustomField</name>
     </types>
     <types>
         <members>AfflMappingsDescription</members>
         <members>AfflProgEnrollDeleted</members>
-        <members>affiliationWithSameAccExists</members>
         <members>AttendanceCourseConnectionContactMismatch</members>
         <members>AutoCreateFieldError</members>
         <members>BatchJobRunningProblem</members>
@@ -644,6 +667,7 @@
         <members>addrValidParentObjects</members>
         <members>adminAccNameFormat</members>
         <members>adminAccNameFormatHelpText</members>
+        <members>affiliationWithSameAccExists</members>
         <members>afflAccountNoRecordType</members>
         <members>afflAccoutMappingError</members>
         <members>afflNullPointerError</members>
@@ -843,6 +867,16 @@
         <name>CustomLabels</name>
     </types>
     <types>
+        <members>JSONBuilderSchema.Student_FirstName</members>
+        <members>JSONBuilderSchema.Student_Gender_Identity</members>
+        <members>JSONBuilderSchema.Student_LastName</members>
+        <members>JSONBuilderSchema.Student_Sibling_1_First_Name</members>
+        <members>JSONBuilderSchema.Student_Sibling_1_Last_Name</members>
+        <members>JSONBuilderSchema.Student_Submitted_First_Gen</members>
+        <members>JSONBuilderSchema.Student_in_progress_First_Gen</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
         <members>Address__c</members>
         <members>Affiliation__c</members>
         <members>Affl_Mappings__c</members>
@@ -863,6 +897,7 @@
         <members>Plan_Requirement__c</members>
         <members>Program_Enrollment__c</members>
         <members>Program_Plan__c</members>
+        <members>ProxyObject__c</members>
         <members>Relationship_Auto_Create__c</members>
         <members>Relationship_Lookup__c</members>
         <members>Relationship__c</members>
@@ -872,6 +907,7 @@
         <members>Test__c</members>
         <members>Time_Block__c</members>
         <members>Trigger_Handler__c</members>
+        <members>JSONBuilderSchema__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -1010,6 +1046,7 @@
         <members>Program_Plan__c-es</members>
         <members>Program_Plan__c-es_MX</members>
         <members>Program_Plan__c-fr</members>
+        <members>ProxyObject__c-en_US</members>
         <members>Relationship_Auto_Create__c-ca</members>
         <members>Relationship_Auto_Create__c-en_GB</members>
         <members>Relationship_Auto_Create__c-en_US</members>
@@ -1085,6 +1122,7 @@
         <members>Plan_Requirement__c</members>
         <members>Program_Enrollment__c</members>
         <members>Program_Plan__c</members>
+        <members>ProxyObject__c</members>
         <members>Relationship__c</members>
         <members>Term_Grade__c</members>
         <members>Term__c</members>
@@ -1137,6 +1175,10 @@
         <members>Behavior_Involvement__c-EDA Behavior Involvement Layout</members>
         <members>Behavior_Response__c-EDA Behavior Response Layout</members>
         <members>Case-EDA Incident Layout</members>
+        <members>Contact-Contact %28Marketing%29 Layout</members>
+        <members>Contact-Contact %28Sales%29 Layout</members>
+        <members>Contact-Contact %28Support%29 Layout</members>
+        <members>Contact-Contact Layout</members>
         <members>Contact-HEDA Contact Layout</members>
         <members>Contact_Language__c-HEDA Contact Language Layout</members>
         <members>Course_Enrollment__c-HEDA Course Enrollment Layout</members>
@@ -1149,6 +1191,7 @@
         <members>Plan_Requirement__c-HEDA Plan Requirement Layout</members>
         <members>Program_Enrollment__c-HEDA Program Enrollment Layout</members>
         <members>Program_Plan__c-HEDA Program Plan Layout</members>
+        <members>ProxyObject__c-ProxyObject Layout</members>
         <members>Relationship__c-HEDA Relationship Layout</members>
         <members>Term_Grade__c-HEDA Term Grade Layout</members>
         <members>Term__c-HEDA Term Layout</members>
@@ -1156,6 +1199,7 @@
         <members>Test__c-EDA Test Layout</members>
         <members>Time_Block__c-EDA Time Block Layout</members>
         <members>Trigger_Handler__c-HEDA Trigger Handler Layout</members>
+        <members>JSONBuilderSchema__mdt-JSONBuilderSchema Layout</members>
         <name>Layout</name>
     </types>
     <types>
@@ -1177,6 +1221,7 @@
         <members>Program_Enrollment__c.All</members>
         <members>Program_Plan__c.All</members>
         <members>Program_Plan__c.Primary_Program_Plan</members>
+        <members>ProxyObject__c.All</members>
         <members>Relationship__c.All</members>
         <members>Term_Grade__c.All</members>
         <members>Term__c.All</members>
@@ -1191,6 +1236,11 @@
         <members>Attribute__c.Credential</members>
         <members>Attribute__c.Student_Characteristic</members>
         <name>RecordType</name>
+    </types>
+    <types>
+        <members>EnhancedNotes</members>
+        <members>Security</members>
+        <name>Settings</name>
     </types>
     <types>
         <members>ca</members>

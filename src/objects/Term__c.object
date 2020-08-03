@@ -46,14 +46,6 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>HEDA_Term_Compact_Layout</compactLayoutAssignment>
-    <compactLayouts>
-        <fullName>HEDA_Term_Compact_Layout</fullName>
-        <fields>Name</fields>
-        <fields>Account__c</fields>
-        <fields>Start_Date__c</fields>
-        <fields>End_Date__c</fields>
-        <label>HEDA Term Compact Layout</label>
-    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Unit of time in which academic activities are taking place.</description>
     <enableActivities>false</enableActivities>
@@ -64,6 +56,14 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <label>Term</label>
+    <nameField>
+        <label>Term Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Terms</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
     <fields>
         <fullName>Account__c</fullName>
         <externalId>false</externalId>
@@ -91,8 +91,8 @@
     </fields>
     <fields>
         <fullName>Grading_Period_Sequence__c</fullName>
-        <description>Indicates which Term this is. For example, enter "1"  for the first quarter or semester, "2" for the second quarter or semester, etc.</description>
-        <inlineHelpText>Indicates which Term this is. For example, enter "1"  for the first quarter or semester, "2" for the second quarter or semester, etc.</inlineHelpText>
+        <description>Indicates which Term this is. For example, enter &quot;1&quot;  for the first quarter or semester, &quot;2&quot; for the second quarter or semester, etc.</description>
+        <inlineHelpText>Indicates which Term this is. For example, enter &quot;1&quot;  for the first quarter or semester, &quot;2&quot; for the second quarter or semester, etc.</inlineHelpText>
         <externalId>false</externalId>
         <label>Grading Period Sequence</label>
         <precision>18</precision>
@@ -174,17 +174,17 @@
             </valueSetDefinition>
         </valueSet>
     </fields>
-    <label>Term</label>
+    <compactLayouts>
+        <fullName>HEDA_Term_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Account__c</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <label>HEDA Term Compact Layout</label>
+    </compactLayouts>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
-    <nameField>
-        <label>Term Name</label>
-        <type>Text</type>
-    </nameField>
-    <pluralLabel>Terms</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>

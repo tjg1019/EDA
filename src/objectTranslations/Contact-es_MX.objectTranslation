@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>HEDA Contact Layout</layout>
+        <sections>
+            <label>Información adicional</label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label>Preferencias de comunicación</label>
+            <section>Communication Preferences</section>
+        </sections>
+        <sections>
+            <label>Detalle del contacto</label>
+            <section>Contact Details</section>
+        </sections>
+        <sections>
+            <label>Afiliaciones principales</label>
+            <section>Primary Affiliations</section>
+        </sections>
+    </layouts>
     <fields>
         <help>Email alternativo es un email opcional no capturado en otros campos de email.</help>
         <label>Email alternativo</label>
@@ -9,6 +28,31 @@
         <help>El nombre completo que el contacto prefiere utilizar en vez de un nombre legal u oficial.</help>
         <label>Nombre completo elegido</label>
         <name>Chosen_Full_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Contact&apos;s citizenship status. --></help>
+        <label><!-- Citizenship Status --></label>
+        <name>Citizenship_Status__c</name>
+        <picklistValues>
+            <masterLabel>Other (Non-U.S.)</masterLabel>
+            <translation><!-- Other (Non-U.S.) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Citizen or U.S. National</masterLabel>
+            <translation><!-- U.S. Citizen or U.S. National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Dual Citizen</masterLabel>
+            <translation><!-- U.S. Dual Citizen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Permanent Resident</masterLabel>
+            <translation><!-- U.S. Permanent Resident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>U.S. Refugee or Asylee</masterLabel>
+            <translation><!-- U.S. Refugee or Asylee --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <label>Nacionalidad</label>
@@ -1128,31 +1172,6 @@
         <picklistValues>
             <masterLabel>Åland Islands</masterLabel>
             <translation>Islas Aland</translation>
-        </picklistValues>
-    </fields>
-    <fields>
-        <help><!-- The Contact&apos;s citizenship status. --></help>
-        <label><!-- Citizenship Status --></label>
-        <name>Citizenship_Status__c</name>
-        <picklistValues>
-            <masterLabel>Other (Non-U.S.)</masterLabel>
-            <translation><!-- Other (Non-U.S.) --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>U.S. Citizen or U.S. National</masterLabel>
-            <translation><!-- U.S. Citizen or U.S. National --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>U.S. Dual Citizen</masterLabel>
-            <translation><!-- U.S. Dual Citizen --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>U.S. Permanent Resident</masterLabel>
-            <translation><!-- U.S. Permanent Resident --></translation>
-        </picklistValues>
-        <picklistValues>
-            <masterLabel>U.S. Refugee or Asylee</masterLabel>
-            <translation><!-- U.S. Refugee or Asylee --></translation>
         </picklistValues>
     </fields>
     <fields>
@@ -3700,23 +3719,4 @@
         <label>No actualizar automáticamente</label>
         <name>is_Address_Override__c</name>
     </fields>
-    <layouts>
-        <layout>HEDA Contact Layout</layout>
-        <sections>
-            <label>Información adicional</label>
-            <section>Additional Information</section>
-        </sections>
-        <sections>
-            <label>Preferencias de comunicación</label>
-            <section>Communication Preferences</section>
-        </sections>
-        <sections>
-            <label>Detalle del contacto</label>
-            <section>Contact Details</section>
-        </sections>
-        <sections>
-            <label>Afiliaciones principales</label>
-            <section>Primary Affiliations</section>
-        </sections>
-    </layouts>
 </CustomObjectTranslation>

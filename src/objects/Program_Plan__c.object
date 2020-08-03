@@ -46,13 +46,6 @@
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>HEDA_Program_Plan_Compact_Layout</compactLayoutAssignment>
-    <compactLayouts>
-        <fullName>HEDA_Program_Plan_Compact_Layout</fullName>
-        <fields>Name</fields>
-        <fields>Start_Date__c</fields>
-        <fields>End_Date__c</fields>
-        <label>HEDA Program Plan Compact Layout</label>
-    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Links Courses to an Academic Program to create a path for students to follow. An Academic Program can list multiple Courses, and a Course can be associated with multiple Academic Programs.</description>
     <enableActivities>false</enableActivities>
@@ -63,6 +56,20 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <label>Program Plan</label>
+    <nameField>
+        <label>Program Plan Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Program Plans</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Is_Primary__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
     <fields>
         <fullName>Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -118,9 +125,9 @@
     </fields>
     <fields>
         <fullName>Status__c</fullName>
-        <description>Select "Current" if this Program Plan has students enrolled in it, or is eligible for students to enroll. Otherwise, select "Archived."</description>
+        <description>Select &quot;Current&quot; if this Program Plan has students enrolled in it, or is eligible for students to enroll. Otherwise, select &quot;Archived.&quot;</description>
         <externalId>false</externalId>
-        <inlineHelpText>Select "Current" if this Program Plan has students enrolled in it, or is eligible for students to enroll. Otherwise, select "Archived."</inlineHelpText>
+        <inlineHelpText>Select &quot;Current&quot; if this Program Plan has students enrolled in it, or is eligible for students to enroll. Otherwise, select &quot;Archived.&quot;</inlineHelpText>
         <label>Status</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -156,9 +163,9 @@
     </fields>
     <fields>
         <fullName>Version__c</fullName>
-        <description>Helps identify which version of the Program Plan this is for this Academic Program, for example, "Spring 2020."</description>
+        <description>Helps identify which version of the Program Plan this is for this Academic Program, for example, &quot;Spring 2020.&quot;</description>
         <externalId>false</externalId>
-        <inlineHelpText>Helps identify which version of the Program Plan this is for this Academic Program, for example, "Spring 2020."</inlineHelpText>
+        <inlineHelpText>Helps identify which version of the Program Plan this is for this Academic Program, for example, &quot;Spring 2020.&quot;</inlineHelpText>
         <label>Version</label>
         <length>25</length>
         <required>false</required>
@@ -166,7 +173,13 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Program Plan</label>
+    <compactLayouts>
+        <fullName>HEDA_Program_Plan_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>Start_Date__c</fields>
+        <fields>End_Date__c</fields>
+        <label>HEDA Program Plan Compact Layout</label>
+    </compactLayouts>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
@@ -188,17 +201,4 @@
         </filters>
         <label>Primary Program Plans</label>
     </listViews>
-    <nameField>
-        <label>Program Plan Name</label>
-        <type>Text</type>
-    </nameField>
-    <pluralLabel>Program Plans</pluralLabel>
-    <searchLayouts>
-        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Is_Primary__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

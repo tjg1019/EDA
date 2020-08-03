@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <compactLayouts>
-        <fullName>HEDA_Contact_Compact_Layout</fullName>
-        <fields>Name</fields>
-        <fields>AccountId</fields>
-        <fields>Birthdate</fields>
-        <fields>FERPA__c</fields>
-        <label>HEDA Contact Compact Layout</label>
-    </compactLayouts>
     <fields>
         <fullName>AlternateEmail__c</fullName>
         <description>An optional email address not captured in other email fields.</description>
@@ -32,10 +24,50 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Citizenship_Status__c</fullName>
+        <externalId>false</externalId>
+        <description>The Contact&apos;s citizenship status.</description>
+        <inlineHelpText>The Contact&apos;s citizenship status.</inlineHelpText>
+        <label>Citizenship Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>U.S. Citizen or U.S. National</fullName>
+                    <default>false</default>
+                    <label>U.S. Citizen or U.S. National</label>
+                </value>
+                <value>
+                    <fullName>U.S. Dual Citizen</fullName>
+                    <default>false</default>
+                    <label>U.S. Dual Citizen</label>
+                </value>
+                <value>
+                    <fullName>U.S. Permanent Resident</fullName>
+                    <default>false</default>
+                    <label>U.S. Permanent Resident</label>
+                </value>
+                <value>
+                    <fullName>U.S. Refugee or Asylee</fullName>
+                    <default>false</default>
+                    <label>U.S. Refugee or Asylee</label>
+                </value>
+                <value>
+                    <fullName>Other (Non-U.S.)</fullName>
+                    <default>false</default>
+                    <label>Other (Non-U.S.)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Citizenship__c</fullName>
         <externalId>false</externalId>
-        <description>The person's country of citizenship. If this student has dual citizenship, indicate the second country of citizenship in the Dual Citizenship field.</description>
-        <inlineHelpText>The person's country of citizenship. If this student has dual citizenship, indicate the second country of citizenship in the Dual Citizenship field.</inlineHelpText>
+        <description>The person&apos;s country of citizenship. If this student has dual citizenship, indicate the second country of citizenship in the Dual Citizenship field.</description>
+        <inlineHelpText>The person&apos;s country of citizenship. If this student has dual citizenship, indicate the second country of citizenship in the Dual Citizenship field.</inlineHelpText>
         <label>Citizenship</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -1442,44 +1474,13 @@
         </valueSet>
     </fields>
     <fields>
-        <fullName>Citizenship_Status__c</fullName>
+        <fullName>Contact_JSON__c</fullName>
         <externalId>false</externalId>
-        <description>The Contact's citizenship status.</description>
-        <inlineHelpText>The Contact's citizenship status.</inlineHelpText>
-        <label>Citizenship Status</label>
-        <required>false</required>
+        <label>Contact JSON</label>
+        <length>32768</length>
         <trackFeedHistory>false</trackFeedHistory>
-        <type>Picklist</type>
-        <valueSet>
-            <valueSetDefinition>
-                <sorted>false</sorted>
-                <value>
-                    <fullName>U.S. Citizen or U.S. National</fullName>
-                    <default>false</default>
-                    <label>U.S. Citizen or U.S. National</label>
-                </value>
-                <value>
-                    <fullName>U.S. Dual Citizen</fullName>
-                    <default>false</default>
-                    <label>U.S. Dual Citizen</label>
-                </value>
-                <value>
-                    <fullName>U.S. Permanent Resident</fullName>
-                    <default>false</default>
-                    <label>U.S. Permanent Resident</label>
-                </value>
-                <value>
-                    <fullName>U.S. Refugee or Asylee</fullName>
-                    <default>false</default>
-                    <label>U.S. Refugee or Asylee</label>
-                </value>
-                <value>
-                    <fullName>Other (Non-U.S.)</fullName>
-                    <default>false</default>
-                    <label>Other (Non-U.S.)</label>
-                </value>
-            </valueSetDefinition>
-        </valueSet>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>Country_of_Origin__c</fullName>
@@ -2894,9 +2895,9 @@
     <fields>
         <fullName>Current_Address__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
-        <description>Lookup to the current Address record for this Contact. The Contact's Mailing Address field is automatically populated with the address fields from the current Address record.</description>
+        <description>Lookup to the current Address record for this Contact. The Contact&apos;s Mailing Address field is automatically populated with the address fields from the current Address record.</description>
         <externalId>false</externalId>
-        <inlineHelpText>Lookup to the current Address record for this Contact. The Contact's Mailing Address field is automatically populated with the address fields from the current Address record.</inlineHelpText>
+        <inlineHelpText>Lookup to the current Address record for this Contact. The Contact&apos;s Mailing Address field is automatically populated with the address fields from the current Address record.</inlineHelpText>
         <label>Current Address</label>
         <referenceTo>Address__c</referenceTo>
         <relationshipLabel>Contacts (Current Address)</relationshipLabel>
@@ -2908,8 +2909,8 @@
     <fields>
         <fullName>Date_Deceased__c</fullName>
         <externalId>false</externalId>
-        <description></description>
-        <inlineHelpText></inlineHelpText>
+        <description/>
+        <inlineHelpText/>
         <label>Date Deceased</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Date</type>
@@ -4373,9 +4374,9 @@
     <fields>
         <fullName>Exclude_from_Household_Formal_Greeting__c</fullName>
         <defaultValue>false</defaultValue>
-        <description>This field currently isn't tied to product functionality.</description>
+        <description>This field currently isn&apos;t tied to product functionality.</description>
         <externalId>false</externalId>
-        <inlineHelpText>This field currently isn't tied to product functionality.</inlineHelpText>
+        <inlineHelpText>This field currently isn&apos;t tied to product functionality.</inlineHelpText>
         <label>Exclude from Household Formal Greeting</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
@@ -4383,9 +4384,9 @@
     <fields>
         <fullName>Exclude_from_Household_Informal_Greeting__c</fullName>
         <defaultValue>false</defaultValue>
-        <description>This field currently isn't tied to product functionality.</description>
+        <description>This field currently isn&apos;t tied to product functionality.</description>
         <externalId>false</externalId>
-        <inlineHelpText>This field currently isn't tied to product functionality.</inlineHelpText>
+        <inlineHelpText>This field currently isn&apos;t tied to product functionality.</inlineHelpText>
         <label>Exclude from Household Informal Greeting</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
@@ -4422,9 +4423,9 @@
     </fields>
     <fields>
         <fullName>Former_First_Name__c</fullName>
-        <description>The Contact's former first name.</description>
+        <description>The Contact&apos;s former first name.</description>
         <externalId>false</externalId>
-        <inlineHelpText>The Contact's former first name.</inlineHelpText>
+        <inlineHelpText>The Contact&apos;s former first name.</inlineHelpText>
         <label>Former First Name</label>
         <length>80</length>
         <required>false</required>
@@ -4433,11 +4434,11 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Former_Middle_Name__c</fullName>
-        <description>The Contact's former middle name.</description>
+        <fullName>Former_Last_Name__c</fullName>
+        <description>The Contact&apos;s former last name.</description>
         <externalId>false</externalId>
-        <inlineHelpText>The Contact's former middle name.</inlineHelpText>
-        <label>Former Middle Name</label>
+        <inlineHelpText>The Contact&apos;s former last name.</inlineHelpText>
+        <label>Former Last Name</label>
         <length>80</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -4445,11 +4446,11 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Former_Last_Name__c</fullName>
-        <description>The Contact's former last name.</description>
+        <fullName>Former_Middle_Name__c</fullName>
+        <description>The Contact&apos;s former middle name.</description>
         <externalId>false</externalId>
-        <inlineHelpText>The Contact's former last name.</inlineHelpText>
-        <label>Former Last Name</label>
+        <inlineHelpText>The Contact&apos;s former middle name.</inlineHelpText>
+        <label>Former Middle Name</label>
         <length>80</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -4459,8 +4460,8 @@
     <fields>
         <fullName>Gender__c</fullName>
         <externalId>false</externalId>
-        <description>Indicates the person's self-identified gender.</description>
-        <inlineHelpText>Indicates the person's self-identified gender.</inlineHelpText>
+        <description>Indicates the person&apos;s self-identified gender.</description>
+        <inlineHelpText>Indicates the person&apos;s self-identified gender.</inlineHelpText>
         <label>Gender</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4495,8 +4496,8 @@
     <fields>
         <fullName>HIPAA__c</fullName>
         <defaultValue>false</defaultValue>
-        <description>Can be used to indicate that the student Contact's record is subject to Health Insurance Portability and Accountability Act requirements, without displaying the details of that information.</description>
-        <inlineHelpText>Indicates whether this person's record is subject to Health Insurance Portability and Accountability Act standards.</inlineHelpText>
+        <description>Can be used to indicate that the student Contact&apos;s record is subject to Health Insurance Portability and Accountability Act requirements, without displaying the details of that information.</description>
+        <inlineHelpText>Indicates whether this person&apos;s record is subject to Health Insurance Portability and Accountability Act standards.</inlineHelpText>
         <externalId>false</externalId>
         <label>HIPAA</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4517,8 +4518,8 @@
     <fields>
         <fullName>Military_Background__c</fullName>
         <externalId>false</externalId>
-        <description>Describe this person's miltary service, for example, the branch of the military, length of time in the miltary, date of discharge, etc.</description>
-        <inlineHelpText>Describe this person's miltary service, for example, the branch of the military, length of time in the miltary, date of discharge, etc.</inlineHelpText>
+        <description>Describe this person&apos;s miltary service, for example, the branch of the military, length of time in the miltary, date of discharge, etc.</description>
+        <inlineHelpText>Describe this person&apos;s miltary service, for example, the branch of the military, length of time in the miltary, date of discharge, etc.</inlineHelpText>
         <label>Military Background</label>
         <length>32768</length>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4863,9 +4864,9 @@
     </fields>
     <fields>
         <fullName>UniversityEmail__c</fullName>
-        <description>This person's school email address.</description>
+        <description>This person&apos;s school email address.</description>
         <externalId>false</externalId>
-        <inlineHelpText>This person's school email address.</inlineHelpText>
+        <inlineHelpText>This person&apos;s school email address.</inlineHelpText>
         <label>University Email</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
@@ -4895,7 +4896,7 @@
     </fields>
     <fields>
         <fullName>Work_Address__c</fullName>
-        <description>If you've set "Work" as the Primary Address type, the Work Address is populated with the Mailing Address values. If "Work" is the Secondary Address type, the Work Address is populated with the "Other Address" values. This field is read-only.</description>
+        <description>If you&apos;ve set &quot;Work&quot; as the Primary Address type, the Work Address is populated with the Mailing Address values. If &quot;Work&quot; is the Secondary Address type, the Work Address is populated with the &quot;Other Address&quot; values. This field is read-only.</description>
         <externalId>false</externalId>
         <formula>if(
     ISPICKVAL(Primary_Address_Type__c,&quot;Work&quot;),
@@ -4914,7 +4915,7 @@
     ,
     &quot;&quot;)
 )</formula>
-        <inlineHelpText>If you've set "Work" as the Primary Address type, the Work Address is populated with the Mailing Address values. If "Work" is the Secondary Address type, the Work Address is populated with the "Other Address" values. This field is read-only.</inlineHelpText>
+        <inlineHelpText>If you&apos;ve set &quot;Work&quot; as the Primary Address type, the Work Address is populated with the Mailing Address values. If &quot;Work&quot; is the Secondary Address type, the Work Address is populated with the &quot;Other Address&quot; values. This field is read-only.</inlineHelpText>
         <label>Work Address</label>
         <required>false</required>
         <type>Text</type>
@@ -4923,11 +4924,19 @@
     <fields>
         <fullName>is_Address_Override__c</fullName>
         <defaultValue>false</defaultValue>
-        <description>When selected, this Contact's address won't be synced with the Household Default or Seasonal Address. Use this to maintain a separate Mailing Address for this particular Contact. (Applies to Household Contacts only.)</description>
+        <description>When selected, this Contact&apos;s address won&apos;t be synced with the Household Default or Seasonal Address. Use this to maintain a separate Mailing Address for this particular Contact. (Applies to Household Contacts only.)</description>
         <externalId>false</externalId>
-        <inlineHelpText>When selected, this Contact's address won't be synced with the Household Default or Seasonal Address. Use this to maintain a separate Mailing Address for this particular Contact. (Applies to Household Contacts only.)</inlineHelpText>
+        <inlineHelpText>When selected, this Contact&apos;s address won&apos;t be synced with the Household Default or Seasonal Address. Use this to maintain a separate Mailing Address for this particular Contact. (Applies to Household Contacts only.)</inlineHelpText>
         <label>Do Not Automatically Update</label>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Checkbox</type>
     </fields>
+    <compactLayouts>
+        <fullName>HEDA_Contact_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>AccountId</fields>
+        <fields>Birthdate</fields>
+        <fields>FERPA__c</fields>
+        <label>HEDA Contact Compact Layout</label>
+    </compactLayouts>
 </CustomObject>

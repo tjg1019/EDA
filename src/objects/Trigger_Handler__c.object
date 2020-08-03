@@ -56,6 +56,14 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
+    <label>Trigger Handler</label>
+    <nameField>
+        <label>Trigger Handler Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Trigger Handlers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
     <fields>
         <fullName>Active__c</fullName>
         <defaultValue>true</defaultValue>
@@ -203,9 +211,9 @@
     <fields>
         <fullName>User_Managed__c</fullName>
         <defaultValue>false</defaultValue>
-        <description>When selected, we no longer push updates to this Trigger Handler. Select this option if you&apos;ve made changes that you don't want us to overwrite.</description>
+        <description>When selected, we no longer push updates to this Trigger Handler. Select this option if you&apos;ve made changes that you don&apos;t want us to overwrite.</description>
         <externalId>false</externalId>
-        <inlineHelpText>When selected, we no longer push updates to this Trigger Handler. Select this option if you&apos;ve made changes that you don't want us to overwrite.</inlineHelpText>
+        <inlineHelpText>When selected, we no longer push updates to this Trigger Handler. Select this option if you&apos;ve made changes that you don&apos;t want us to overwrite.</inlineHelpText>
         <label>User Managed</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -220,7 +228,6 @@
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
-    <label>Trigger Handler</label>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
@@ -238,11 +245,4 @@
         <filterScope>Everything</filterScope>
         <label>All - Main Fields</label>
     </listViews>
-    <nameField>
-        <label>Trigger Handler Name</label>
-        <type>Text</type>
-    </nameField>
-    <pluralLabel>Trigger Handlers</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
