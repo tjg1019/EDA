@@ -191,7 +191,11 @@ public class DataMapper {
             //CommonApp_Id__c = newFakeStud.CommonAppId
         ); 
 		
-		commonAppIDField = newFakeStud.CommonAppId;         
+        String str = 'Contact';
+       	SObject conObj = Schema.getGlobalDescribe().get(str).newSObject(); 
+        System.debug('obj -->' + conObj);
+        
+		//commonAppIDField = newFakeStud.CommonAppId;         
         for (String key : schemaMapperBySourceAttribute.keySet()) {
             System.debug('KeyValue -->' + key); //Structure Value 
 			System.debug('dynamicProp --->' + newFakeStud.getProperty(key)); //the value of the Key
@@ -202,17 +206,23 @@ public class DataMapper {
                 System.debug('conField Loop-->' + conField); 
                 if (schemaMapperBySourceAttribute.containsKey(key)) { 
                     if (conField == schemaMapperBySourceAttribute.get(key).Final_Field__c) { //Check if the key value matches the current Contact field
-                        
+                    	System.debug('keyField Value -->' + (schemaMapperBySourceAttribute.get(key).Final_Field__c)); 
+                        System.debug('conField Loop-->' + conField); 
+                         
+                        conObj.put(schemaMapperBySourceAttribute.get(key).Final_Field__c, conField);
+						System.debug('Finalobj -->' + conObj); 
                     }
                 }
             }
         }
-        if (schemaMapperBySourceAttribute.containsKey ('FirstGen.InProgress')) {
+        
+        
+        /*if (schemaMapperBySourceAttribute.containsKey ('FirstGen.InProgress')) {
         	c.Contact_JSON__c = 'FirstGen-InProgress: ' + (String)newFakeStud.FirstGen.InProgress; 
         } 
         if (schemaMapperBySourceAttribute.containsKey ('FirstGen.Submitted')) {
             c.Contact_JSON__c = 'FirstGen-Submitted: ' + (String)newFakeStud.FirstGen.InProgress; 
-        }
+        }*/ 
         
         
         consToInsert.add(c); 

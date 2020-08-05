@@ -7,8 +7,7 @@ global class SampleBatch implements Database.Batchable<sObject> {
     }
     
     global void execute(Database.BatchableContext bc, List<ProxyObject__c> records){
-        System.debug('batch execute method --> ' + records);
-        JSONBuilder.runBuilder(records); 
+        DataMapper.testRun(); 
         
         //Non Bulk: 
         //1.Need to update saveToProxy() to be bulkified - be nice to remove it outside of the loop
@@ -21,18 +20,6 @@ global class SampleBatch implements Database.Batchable<sObject> {
                 }
             } 
         }*/ 
-        
-        
-        //Assuming that this is only for first years 
-        /*List<SObject> jsonRecords = new List<SObject>(); 
-        for (ContentNote contentNote : records) {
-        	jsonRecords.add(contentNote); 
-        }
-        
-        if (!jsonRecords.isEmpty()) {
-            ObjectSerializer.main(jsonRecords); 
-        }*/ 
-       	
     }    
     
     global void finish(Database.BatchableContext bc){
