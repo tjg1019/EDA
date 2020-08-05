@@ -44,6 +44,10 @@
                 <behavior>Edit</behavior>
                 <field>FERPA__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CommonApp_Id__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

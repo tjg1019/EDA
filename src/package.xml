@@ -40,6 +40,7 @@
         <members>Advancement_Adapter</members>
         <members>Advancement_Adapter_TEST</members>
         <members>Advancement_Info</members>
+        <members>AppConstants</members>
         <members>BEH_CannotDelete_TDTM</members>
         <members>BEH_CannotDelete_TEST</members>
         <members>CASE_CannotDelete_TDTM</members>
@@ -86,7 +87,13 @@
         <members>COUR_CannotDelete_TEST</members>
         <members>COUR_DescriptionCopy_BATCH</members>
         <members>COUR_DescriptionCopy_TEST</members>
+        <members>CSVFileUtil</members>
+        <members>CustomMetadataLoaderController</members>
+        <members>CustomMetadataLoaderControllerTest</members>
+        <members>CustomMetadataUploadController</members>
+        <members>CustomMetadataUploadControllerTest</members>
         <members>DataMapper</members>
+        <members>DynamicProperty</members>
         <members>ERR_AsyncErrors</members>
         <members>ERR_AsyncErrors_SCHED</members>
         <members>ERR_AsyncErrors_TEST</members>
@@ -101,6 +108,28 @@
         <members>FACI_CannotDelete_TDTM</members>
         <members>FACI_CannotDelete_TEST</members>
         <members>JSONBuilder</members>
+        <members>JsonUtilities</members>
+        <members>MDWrapperWebServiceMock</members>
+        <members>MetadataApexApiLoader</members>
+        <members>MetadataLoader</members>
+        <members>MetadataLoaderClient</members>
+        <members>MetadataLoaderFactory</members>
+        <members>MetadataMapper</members>
+        <members>MetadataMapperCustom</members>
+        <members>MetadataMapperDefault</members>
+        <members>MetadataMapperFactory</members>
+        <members>MetadataMapperSimple</members>
+        <members>MetadataMapperType</members>
+        <members>MetadataMappingInfo</members>
+        <members>MetadataMigrationController</members>
+        <members>MetadataMigrationException</members>
+        <members>MetadataObjectCreator</members>
+        <members>MetadataOpType</members>
+        <members>MetadataResponse</members>
+        <members>MetadataService</members>
+        <members>MetadataServiceTest</members>
+        <members>MetadataUtil</members>
+        <members>MetadataWrapperApiLoader</members>
         <members>ObjectSerializer</members>
         <members>PPlan_CannotDelete_TDTM</members>
         <members>PPlan_CannotDelete_TEST</members>
@@ -132,6 +161,7 @@
         <members>STG_InstallScript</members>
         <members>STG_InstallScript_TEST</members>
         <members>SampleBatch</members>
+        <members>Student</members>
         <members>StudentContact</members>
         <members>TB_CannotDelete_TDTM</members>
         <members>TB_CannotDelete_TEST</members>
@@ -183,12 +213,16 @@
         <members>UTIL_Profile_TEST</members>
         <members>UTIL_SortContact</members>
         <members>UTIL_SortContact_TEST</members>
+        <members>UTIL_Students</members>
         <members>UTIL_UnitTestData_API</members>
         <members>UTIL_UnitTestData_TEST</members>
         <members>scriptAddMDT</members>
         <name>ApexClass</name>
     </types>
     <types>
+        <members>CMTMigrator</members>
+        <members>CustomMetadataLoader</members>
+        <members>CustomMetadataRecordUploader</members>
         <members>STG_Settings</members>
         <name>ApexPage</name>
     </types>
@@ -276,6 +310,7 @@
         <name>CompactLayout</name>
     </types>
     <types>
+        <members>Custom_Metadata_Loader</members>
         <members>HEDA</members>
         <name>CustomApplication</name>
     </types>
@@ -324,6 +359,7 @@
         <members>Application__c.Applicant__c</members>
         <members>Application__c.Application_Date__c</members>
         <members>Application__c.Application_Decision_Date__c</members>
+        <members>Application__c.Application_JSON__c</members>
         <members>Application__c.Application_Status__c</members>
         <members>Application__c.Application_Type__c</members>
         <members>Application__c.Applying_To__c</members>
@@ -362,10 +398,16 @@
         <members>Case.Category__c</members>
         <members>Case.Location__c</members>
         <members>Case.Occurrence_Date__c</members>
+        <members>CommonApp_DataMapping__c.Final_Field__c</members>
+        <members>CommonApp_DataMapping__c.Final_Object__c</members>
+        <members>CommonApp_DataMapping__c.Mapped_to__c</members>
+        <members>CommonApp_DataMapping__c.Structure__c</members>
+        <members>CommonApp_Integration_Setup__c.Common_App_ID__c</members>
         <members>Contact.AlternateEmail__c</members>
         <members>Contact.Chosen_Full_Name__c</members>
         <members>Contact.Citizenship_Status__c</members>
         <members>Contact.Citizenship__c</members>
+        <members>Contact.CommonApp_Id__c</members>
         <members>Contact.Contact_JSON__c</members>
         <members>Contact.Country_of_Origin__c</members>
         <members>Contact.Current_Address__c</members>
@@ -613,6 +655,8 @@
         <members>Trigger_Handler__c.Trigger_Action__c</members>
         <members>Trigger_Handler__c.User_Managed__c</members>
         <members>Trigger_Handler__c.Usernames_to_Exclude__c</members>
+        <members>CountryMapping__mdt.CountryCode__c</members>
+        <members>CountryMapping__mdt.CountryName__c</members>
         <members>JSONBuilderSchema__mdt.Mapped_To__c</members>
         <members>JSONBuilderSchema__mdt.Object__c</members>
         <members>JSONBuilderSchema__mdt.Order__c</members>
@@ -625,241 +669,28 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>AfflMappingsDescription</members>
-        <members>AfflProgEnrollDeleted</members>
-        <members>AttendanceCourseConnectionContactMismatch</members>
-        <members>AutoCreateFieldError</members>
-        <members>BatchJobRunningProblem</members>
-        <members>BothFieldAndValue</members>
-        <members>CannotChangeContactAndCourseOffering</members>
-        <members>CannotDelete</members>
-        <members>DefaultAccountName</members>
-        <members>DefaultAdminName</members>
-        <members>DefaultHouseholdName</members>
-        <members>Female</members>
-        <members>InvalidFilter</members>
-        <members>Male</members>
-        <members>MultipleCourseConnection</members>
-        <members>NoContactCOFound</members>
-        <members>NoCourseConnection</members>
-        <members>NoDataMatch</members>
-        <members>NoFieldsPopulated</members>
-        <members>NoneOption</members>
-        <members>OnlyCourseConnectionPopulated</members>
-        <members>PreferredEmailMatchMustExist</members>
-        <members>PreferredEmailMatchNotNull</members>
-        <members>PreferredEmailRequiredError</members>
-        <members>PreferredPhoneMatchMustExist</members>
-        <members>PreferredPhoneMatchNotNull</members>
-        <members>PreferredPhoneRequiredError</members>
-        <members>Relationship_Explanation_Connector</members>
-        <members>Relationship_Split</members>
-        <members>RelationshipsAutoDescription</members>
-        <members>RelationshipsLookupDescription</members>
-        <members>acctNamingOther</members>
-        <members>adapterException</members>
-        <members>addrHhAdmAccountOnly</members>
-        <members>addrNotEnabledAccount</members>
-        <members>addrNotEnabledContact</members>
-        <members>addrSeasonalOverlap</members>
-        <members>addrSeasonalPartial</members>
-        <members>addrSeasonalPartialYear</members>
-        <members>addrValidParentObjects</members>
-        <members>adminAccNameFormat</members>
-        <members>adminAccNameFormatHelpText</members>
-        <members>affiliationWithSameAccExists</members>
-        <members>afflAccountNoRecordType</members>
-        <members>afflAccoutMappingError</members>
-        <members>afflNullPointerError</members>
-        <members>afflTypeEnforced</members>
-        <members>afflTypeEnforcedDescription</members>
-        <members>automaticHHNaming</members>
-        <members>automaticHHNamingHelpText</members>
-        <members>defaultNamingConnector</members>
-        <members>duplicateFieldInFilter</members>
-        <members>duplicateWithHEDAField</members>
-        <members>exceptionRequiredField</members>
-        <members>exceptionValidationRule</members>
-        <members>fieldWithHEDANamespace</members>
-        <members>firstNameLastNameAdminACC</members>
-        <members>firstNameLastNameFamily</members>
-        <members>firstNameLastNameHH</members>
-        <members>giftProcessingConfigException</members>
-        <members>hhAccNameFormat</members>
-        <members>hhAccNameFormatHelpText</members>
-        <members>hhFamily</members>
-        <members>lastNameAdminAcc</members>
-        <members>lastNameFamily</members>
-        <members>lastNameFirstNameAdminAcc</members>
-        <members>lastNameFirstNameFamily</members>
-        <members>lastNameFirstNameHH</members>
-        <members>lastNameHH</members>
-        <members>nestedPlanRequirementPPExp</members>
-        <members>noAccRecType</members>
-        <members>noAfflMappings</members>
-        <members>noAutoCreateSettings</members>
-        <members>noRecSettings</members>
-        <members>preferredBatchDefaultEmail</members>
-        <members>preferredBatchDefaultPhone</members>
-        <members>stgAccModelTitle</members>
-        <members>stgAccountRecordTypeSupportsHHAddress</members>
-        <members>stgAccountTypesMultiAddressesEnabled</members>
-        <members>stgAccoutTypesWithoutContactsDelete</members>
-        <members>stgAddHispanicOrLatinoPicklistValue</members>
-        <members>stgAddNotHispanicOrLatinoPicklistValue</members>
-        <members>stgAdminAccountRecordType</members>
-        <members>stgAfflCopyProgramEnrollmentEndDate</members>
-        <members>stgAfflCopyProgramEnrollmentStartDate</members>
-        <members>stgAfflDeleteProgramEnrollment</members>
-        <members>stgAfflNotInserted</members>
-        <members>stgAfflProgEnrollDeleteRelated</members>
-        <members>stgAfflProgEnrollSetRole</members>
-        <members>stgAfflProgEnrollSetRoleValue</members>
-        <members>stgAfflProgEnrollSetStatusValue</members>
-        <members>stgAfterRunBackfill</members>
-        <members>stgAutoCompleteEnterChatterGroupName</members>
-        <members>stgAutoCompleteEnterUserName</members>
-        <members>stgAutoCompleteSelectChatterGroup</members>
-        <members>stgAutoCompleteSelectUser</members>
-        <members>stgAutoEnrollment</members>
-        <members>stgAutoEnrollmentRole</members>
-        <members>stgAutoEnrollmentStatus</members>
-        <members>stgBackfillQueuedEmailSent</members>
-        <members>stgBeforeRunBackfill</members>
-        <members>stgBtnAddMapping</members>
-        <members>stgBtnAddSetting</members>
-        <members>stgBtnCancel</members>
-        <members>stgBtnEdit</members>
-        <members>stgBtnRunBackfill</members>
-        <members>stgBtnRunCopy</members>
-        <members>stgBtnSave</members>
-        <members>stgCleanupQueuedEmailSent</members>
-        <members>stgColAccountRecordType</members>
-        <members>stgColActive</members>
-        <members>stgColCampTypes</members>
-        <members>stgColContactPrimaryAfflField</members>
-        <members>stgColFemale</members>
-        <members>stgColField</members>
-        <members>stgColMale</members>
-        <members>stgColNeutral</members>
-        <members>stgColObject</members>
-        <members>stgColRelType</members>
-        <members>stgColRole</members>
-        <members>stgColStatus</members>
-        <members>stgConfirmReadyRunBackfill</members>
-        <members>stgContactMultiAddressesEnabled</members>
-        <members>stgCourseConnBackFillError</members>
-        <members>stgCourseConnBackFillSuccess</members>
-        <members>stgCourseDescriptionCopyEmailBody</members>
-        <members>stgCourseDescriptionCopyEmailSubject</members>
-        <members>stgDefaultContactLanguageFluency</members>
-        <members>stgDefaultFacultyTypeTitle</members>
-        <members>stgDefaultStudentTypeTitle</members>
-        <members>stgDisableErrorHandlingTitle</members>
-        <members>stgDisablePreferredEmailEnforcement</members>
-        <members>stgDisablePreferredPhoneEnforcement</members>
-        <members>stgEnableCourseConnectionsTitle</members>
-        <members>stgEnablePreferredPhoneSync</members>
-        <members>stgErrorNotiTo</members>
-        <members>stgErrorNotifRecipientsTitle</members>
-        <members>stgEthnicityRaceBackfillContacts</members>
-        <members>stgFluent</members>
-        <members>stgHelpAccountModel</members>
-        <members>stgHelpAccoutsDeletedIfChildContactsDeleted</members>
-        <members>stgHelpAddressAccRecType</members>
-        <members>stgHelpAdminRecType</members>
-        <members>stgHelpAfflCopyProgramEnrollmentEndDate</members>
-        <members>stgHelpAfflCopyProgramEnrollmentStartDate</members>
-        <members>stgHelpAfflCreateFromProgramEnrollmentHeader</members>
-        <members>stgHelpAfflCreateFromProgramEnrollmentInfo</members>
-        <members>stgHelpAfflDeleteProgramEnrollment</members>
-        <members>stgHelpAfflDeleteProgramEnrollmentHeader</members>
-        <members>stgHelpAfflDeleteProgramEnrollmentInfo</members>
-        <members>stgHelpAfflProgEnrollSetRole</members>
-        <members>stgHelpAfflProgEnrollSetRoleValue</members>
-        <members>stgHelpAfflProgEnrollSetStatusValue</members>
-        <members>stgHelpContactAddrs</members>
-        <members>stgHelpContactPreferredEmail</members>
-        <members>stgHelpContactPreferredPhone</members>
-        <members>stgHelpContactPreferredPhoneSync</members>
-        <members>stgHelpCopyQueuedEmailSent</members>
-        <members>stgHelpCourseConnBackfillDescription</members>
-        <members>stgHelpCoursesDataMigration</members>
-        <members>stgHelpCoursesDataMigrationCopiesValues</members>
-        <members>stgHelpCoursesDataMigrationDontOverwrite</members>
-        <members>stgHelpCoursesDataMigrationUpdatePageLayouts</members>
-        <members>stgHelpDefaultContactLanguageFluency</members>
-        <members>stgHelpDefaultFacultyType</members>
-        <members>stgHelpDefaultStudentType</members>
-        <members>stgHelpEnableCourseConnBeforeBackfill</members>
-        <members>stgHelpEnableCourseConnBeforeRecordTypes</members>
-        <members>stgHelpEnableCourseConnections</members>
-        <members>stgHelpEnsureExistContactPreferEmail</members>
-        <members>stgHelpErrorDisable</members>
-        <members>stgHelpErrorNotifyOn</members>
-        <members>stgHelpErrorNotifyTo</members>
-        <members>stgHelpEthnicityRaceBackfill</members>
-        <members>stgHelpHouseAdmAccountAddressMgmt</members>
-        <members>stgHelpHouseholdRecType</members>
-        <members>stgHelpIfCustomValuesEthnicityCopyRace</members>
-        <members>stgHelpNestedPlanRequirementPP</members>
-        <members>stgHelpOrgAccountAddressMgmt</members>
-        <members>stgHelpRelAutoCreatedDup</members>
-        <members>stgHelpRelReciprocalMethod</members>
-        <members>stgHelpRemoveAllPicklistValuesEthnicityExceptHispanicOrLatino</members>
-        <members>stgHelpSimpleAddrChangeIsUpdate</members>
-        <members>stgHelpStoreErrorsOn</members>
-        <members>stgHelpUpdateReportIfDependenciesEthnicity</members>
-        <members>stgNestedPlanRequirementPP</members>
-        <members>stgNewAfflMapping</members>
-        <members>stgOptAllSysAdmins</members>
-        <members>stgOptChatterGroup</members>
-        <members>stgOptSelect</members>
-        <members>stgOptUser</members>
-        <members>stgPreferredEmailBatchEmailBody</members>
-        <members>stgPreferredEmailBatchEmailSubject</members>
-        <members>stgPreferredEmailDataCleanup</members>
-        <members>stgPreferredPhoneSelection</members>
-        <members>stgRefreshAdminAcctNameDesc</members>
-        <members>stgRefreshAdminAcctNameTitle</members>
-        <members>stgRefreshHHAcctNameDesc</members>
-        <members>stgRefreshHHAcctNameTitle</members>
-        <members>stgRunCleanUp</members>
-        <members>stgRunCleanUpEnableFirstTime</members>
-        <members>stgSaveSettings</members>
-        <members>stgSelectReciType</members>
-        <members>stgSendErrorsTitle</members>
-        <members>stgSimpleAddressChangeUpdate</members>
-        <members>stgStoreErrorsTitle</members>
-        <members>stgSuccess</members>
-        <members>stgSuccessAdminAccountNameRefresh</members>
-        <members>stgSuccessHHAccountNameRefresh</members>
-        <members>stgTabAccCont</members>
-        <members>stgTabAffl</members>
-        <members>stgTabAfflMappings</members>
-        <members>stgTabAutocreation</members>
-        <members>stgTabBackfill</members>
-        <members>stgTabCourse</members>
-        <members>stgTabCourseConn</members>
-        <members>stgTabName</members>
-        <members>stgTabPrimaryAfflField</members>
-        <members>stgTabProgramPlan</members>
-        <members>stgTabReciprocalSettings</members>
-        <members>stgTabRel</members>
-        <members>stgTabSettings</members>
-        <members>stgTabSystem</members>
-        <members>stgTitleAllowAutocreatedDuplicateRel</members>
-        <members>stgTitleAppwideSettings</members>
-        <members>stgTitleCourseConnectionBackfill</members>
-        <members>stgTitleCoursesDescriptionDataMigration</members>
-        <members>stgTitleHEDAConfig</members>
-        <members>stgTitleHEDASettings</members>
-        <members>stgTitleNewAutocreateSetting</members>
-        <members>stgTitleNewReciSetting</members>
-        <members>stgTitleReciMethod</members>
-        <members>stgToastError</members>
-        <members>timeBlockEndTimeMismatch</members>
-        <members>timeBlockStartTimeMismatch</members>
+        <members>EMPTY_FILE</members>
+        <members>ERROR_JSON_BAD_FORMAT</members>
+        <members>ERROR_JSON_EMPTY</members>
+        <members>ERROR_OP_FAILED</members>
+        <members>ERROR_REQUEST_FAILED_NO_ERROR</members>
+        <members>ERROR_UNAUTHORIZED_ENDPOINT</members>
+        <members>FILE_MISSING</members>
+        <members>INVALID_FILE_ROW_SIZE_DOESNT_MATCH</members>
+        <members>MSG_CHECK_API_NAMES</members>
+        <members>MSG_CS_MDT_EXISTS</members>
+        <members>MSG_CS_MDT_FIELD_NAME_FORMAT</members>
+        <members>MSG_CS_MDT_FIELD_NAME_REQ</members>
+        <members>MSG_CS_MDT_MAPPING_REQ</members>
+        <members>MSG_CS_MDT_REQ</members>
+        <members>MSG_CUSTOM_SETTINGS_EXISTS</members>
+        <members>MSG_JSON_API_NAMES</members>
+        <members>MSG_JSON_FORMAT</members>
+        <members>MSG_MDT_END</members>
+        <members>MSG_MIGRATION_COMPLETED</members>
+        <members>MSG_MIGRATION_IN_PROGRESS</members>
+        <members>MSG_NOT_SUPPORTED</members>
+        <members>TYPE_OPTION_NOT_SELECTED</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -867,11 +698,16 @@
         <name>CustomLabels</name>
     </types>
     <types>
+        <members>JSONBuilderSchema.Student_Common_App_ID</members>
+        <members>JSONBuilderSchema.Student_Counselor_First_Name</members>
         <members>JSONBuilderSchema.Student_FirstName</members>
         <members>JSONBuilderSchema.Student_Gender_Identity</members>
         <members>JSONBuilderSchema.Student_LastName</members>
         <members>JSONBuilderSchema.Student_Sibling_1_First_Name</members>
         <members>JSONBuilderSchema.Student_Sibling_1_Last_Name</members>
+        <members>JSONBuilderSchema.Student_Sibling_2_First_Name</members>
+        <members>JSONBuilderSchema.Student_Sibling_2_Last_Name</members>
+        <members>JSONBuilderSchema.Student_Student_Type</members>
         <members>JSONBuilderSchema.Student_Submitted_First_Gen</members>
         <members>JSONBuilderSchema.Student_in_progress_First_Gen</members>
         <name>CustomMetadata</name>
@@ -885,6 +721,8 @@
         <members>Attribute__c</members>
         <members>Behavior_Involvement__c</members>
         <members>Behavior_Response__c</members>
+        <members>CommonApp_DataMapping__c</members>
+        <members>CommonApp_Integration_Setup__c</members>
         <members>Contact_Language__c</members>
         <members>Course_Enrollment__c</members>
         <members>Course_Offering_Schedule__c</members>
@@ -907,6 +745,7 @@
         <members>Test__c</members>
         <members>Time_Block__c</members>
         <members>Trigger_Handler__c</members>
+        <members>CountryMapping__mdt</members>
         <members>JSONBuilderSchema__mdt</members>
         <name>CustomObject</name>
     </types>
@@ -1111,11 +950,14 @@
         <members>Attribute__c</members>
         <members>Behavior_Involvement__c</members>
         <members>Behavior_Response__c</members>
+        <members>CMT_Migrator</members>
+        <members>CommonApp_DataMapping__c</members>
         <members>Contact_Language__c</members>
         <members>Course_Enrollment__c</members>
         <members>Course_Offering_Schedule__c</members>
         <members>Course_Offering__c</members>
         <members>Course__c</members>
+        <members>Custom_Metadata_Loader</members>
         <members>Facility__c</members>
         <members>HEDA_Settings</members>
         <members>Language__c</members>
@@ -1175,6 +1017,7 @@
         <members>Behavior_Involvement__c-EDA Behavior Involvement Layout</members>
         <members>Behavior_Response__c-EDA Behavior Response Layout</members>
         <members>Case-EDA Incident Layout</members>
+        <members>CommonApp_DataMapping__c-CommonApp DataMapping Layout</members>
         <members>Contact-Contact %28Marketing%29 Layout</members>
         <members>Contact-Contact %28Sales%29 Layout</members>
         <members>Contact-Contact %28Support%29 Layout</members>
@@ -1210,6 +1053,7 @@
         <members>Attribute__c.All</members>
         <members>Behavior_Involvement__c.All</members>
         <members>Behavior_Response__c.All</members>
+        <members>CommonApp_DataMapping__c.All</members>
         <members>Contact_Language__c.All</members>
         <members>Course_Enrollment__c.All</members>
         <members>Course_Offering_Schedule__c.All</members>
@@ -1231,6 +1075,10 @@
         <members>Trigger_Handler__c.All</members>
         <members>Trigger_Handler__c.All_Main_Fields</members>
         <name>ListView</name>
+    </types>
+    <types>
+        <members>Custom_Metadata_Loader</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>Attribute__c.Credential</members>

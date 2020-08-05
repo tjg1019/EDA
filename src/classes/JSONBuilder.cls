@@ -1,17 +1,57 @@
 public class JSONBuilder {
     
-    public static void saveToProxyBulk(List<ProxyObject__c> poRecords){
-        
+    //Kim Version: 
+    public static void runBuilder(List<ProxyObject__c> pos){
+        System.debug('JSONBuilder Kim V -->');
+		List<JSONBuilderSchema__mdt> schema = getJSONBuilderSchema('CommonApp', 'Student');
+        List<Map<String, Object>> newObjectList = new List<Map<String, Object>>();
+
+        if(!pos.isEmpty() && !schema.isEmpty()){
+            newObjectList = buildJSONSchema(pos, schema);
+        }
+
+        //return newObjectList; //This is deserialized. 
+    
+        //Updating the FinalJSON__c for POC
+        List<ProxyObject__c> poToUpdate = new List<ProxyObject__c>();
+
+        Map<Id, Map<String,Object>> JSONObjectByProxyId = new Map<Id, Map<String,Object>>();
+
+        for(Map<String,Object> newObject : newObjectList){
+            Map<String, Object> IntegrationSystemFields = (Map<String,Object>)newObject.get('IntegrationSystemFields');
+            Map<String, Object> proxyObject = (Map<String,Object>)IntegrationSystemFields.get('ProxyObject');
+            JSONObjectByProxyId.put((Id)proxyObject.get('Id'), newObject);
+        }
+
+        Map<Id, ProxyObject__c> pos2 = new Map<Id, ProxyObject__c>(
+            											[Select Id, FinalJSON__c 
+             												from ProxyObject__c 
+                                                         	WHERE Id IN :JSONObjectByProxyId.keySet()]);
+
+        for(Id poId : JSONObjectByProxyId.keySet()){
+            if(pos2.containsKey(poId)){
+
+                ProxyObject__c po = pos2.get(poId);
+                po.FinalJSON__c = JSON.serialize(JSONObjectByProxyId.get(poId)); //Converts it from Object to String
+                System.debug('saveToProxy finalFieldValueCheck -->' + po); 
+                poToUpdate.add(po);
+
+            }
+        }
+	    System.debug('saveToProxy poToUpdate -->' + poToUpdate); 
+        if(!poToUpdate.isEmpty()){
+            update poToUpdate;
+        }
+
     }
     
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method does the following:
     //1. Calls runBuilder() to retrieve JSONSchemaBuilder CMT recorrds 
     public static void saveToProxy(String sourceApp, String sourceType){
-        
         List<Map<String, Object>> newObjectList = runBuilder(sourceApp, sourceType);
-        
         List<ProxyObject__c> poToUpdate = new List<ProxyObject__c>();
-
         Map<Id, Map<String,Object>> JSONObjectByProxyId = new Map<Id, Map<String,Object>>();
 
         for(Map<String,Object> newObject : newObjectList){
@@ -24,7 +64,6 @@ public class JSONBuilder {
 
         for(Id poId : JSONObjectByProxyId.keySet()){
             if(pos.containsKey(poId)){
-
                 ProxyObject__c po = pos.get(poId);
                 po.FinalJSON__c = JSON.serialize(JSONObjectByProxyId.get(poId));
                 System.debug('saveToProxy finalFieldValueCheck -->' + po); 
@@ -37,47 +76,53 @@ public class JSONBuilder {
         if(!poToUpdate.isEmpty()){
             update poToUpdate;
         }
-
     }
 	
-    
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method that:
     //1. Retrieves the JSONSchemaBuilder CMT recorrds 
     //2. Retrieves the proxy object records where Source = CA and Type = Student
     public static List<Map<String, Object>> runBuilder(String sourceApp, String sourceType){
-
         List<Map<String, Object>> newObjectList = new List<Map<String, Object>>();
-
         List<ProxyObject__c> pos = getProxyObjects(sourceApp, sourceType);
 
         if(!pos.isEmpty()){
-
             List<JSONBuilderSchema__mdt> schema = getJSONBuilderSchema(sourceApp, sourceType);
-
             if(!schema.isEmpty()){
 				//We're calling the 2nd runBuilder method 
                 newObjectList = runBuilder(pos, schema);
-
             }
         }
-
+		System.debug('runBuilder returnListMap -->' + newObjectList); 
+        for (Map<String,Object> students : newObjectList) {
+           	for (String key : students.keySet()) {
+            	System.debug('runBuilder returnListMapKey -->' + key); 
+            }
+            for (Object objValue : students.values()) {
+                System.debug('runBuilder returnListMapValue -->' + objValue); 
+            }
+            
+        }
+        
+     
         return newObjectList;
-
     }
 	
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method that calls buildJSONSchema() 
-    public static List<Map<String, Object>> runBuilder(List<ProxyObject__c> pos, List<JSONBuilderSchema__mdt> schema){
-
+    public static List<Map<String, Object>> runBuilder(List<ProxyObject__c> pos, List<JSONBuilderSchema__mdt> schema) {
         List<Map<String, Object>> newObjectList = new List<Map<String, Object>>();
-
         if(!pos.isEmpty() && !schema.isEmpty()){
             newObjectList = buildJSONSchema(pos, schema);
         }
 
         return newObjectList;
-
     }
 	
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method to retrieve the JSONbuilderSchema CMT
     public static List<JSONBuilderSchema__mdt> getJSONBuilderSchema(String sourceApp, String sourceType){
         List<JSONBuilderSchema__mdt> schema = [SELECT SourceType__c, SourceAttribute__c, Structure__c, Order__c 
@@ -90,20 +135,23 @@ public class JSONBuilder {
         return schema;
     }
     
-    
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method to retrieve the Proxy records 
     public static List<ProxyObject__c> getProxyObjects(String sourceApp, String sourceType){
 
-        List<ProxyObject__c> pos = [SELECT Id, BatchId__c, JSON__c, Parent__c, Source__c, Type__c 
+        List<ProxyObject__c> pos = [SELECT Id, BatchId__c, JSON__c, Parent__c, Source__c, Type__c, Processed__c 
                                     FROM ProxyObject__c
                                     WHERE Type__c =: sourceType AND
-                                          Source__c =: sourceApp 
+                                          Source__c =: sourceApp AND 
+                                    	  Processed__c = False 
                                     ];
 
         return pos;
     }
 
-    
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method does the following: 
     //1. Retrieves the JSON flat structure and deserializes it 
     //2. Sets up integration fields 
@@ -112,17 +160,14 @@ public class JSONBuilder {
     //4. Calls addSchemaItem() 
     //5. Returns a Map<String,Obect> //Contains the integration System fields 
     public static List<Map<String, Object>> buildJSONSchema(List<ProxyObject__c> pos, List<JSONBuilderSchema__mdt> schema){
-
         system.debug('Received proxy objects: ' + pos.size() );
         system.debug('Received schema records: ' + schema.size() );
         
         List<Map<String, Object>> newObjectList = new List<Map<String, Object>>();
 
         for(ProxyObject__c po : pos){
-
             //Retrieve the JSON from the proxy object
-            String poJSON = po.JSON__c;
-
+            String poJSON = po.JSON__c; 
             //Deserialize the json to a map so that we can access the values easier
             Map<String, Object> poJSONMap = (Map<String, Object>)JSON.deserializeUntyped(poJSON);
             system.debug('The proxy object attributes: ' + poJSONMap.keySet().size());
@@ -133,9 +178,7 @@ public class JSONBuilder {
             addIntegrationSystemFields(newObject, po);
 
             for(JSONBuilderSchema__mdt sch : schema){
-
                 List<String> structure = sch.Structure__c.split('\\.');
-
                 //Check if the schema attribute to assess exists in the po json attribute
                 if(poJSONMap.containsKey(sch.SourceAttribute__c)){
                     //For now we treat everything as String...we might need to add a attribute type to cast the object to a specific primitive
@@ -147,14 +190,10 @@ public class JSONBuilder {
                     system.debug('Adding structure: ' + structure + ' with value: null');
                     addSchemaItem(newObject, structure, null);
                 }
-
             }
-
             system.debug('JSON structure created: ' + JSON.serialize(newObject));
             newObjectList.add(newObject);
-
         }
-
         return newObjectList;
     }
 
@@ -211,7 +250,9 @@ public class JSONBuilder {
         }
 
     }
-
+    
+	/******************************************************************************************
+     ******************************************************************************************/ 
     public static Map<String,Object> handleArrayField(Map<String, Object> newObject, Map<String, Object> newNode, String field){
 
         //Get the real name for the array without the square brackets
@@ -249,7 +290,9 @@ public class JSONBuilder {
         System.debug('handleArrayField newNode -->' + newNode); 
         return newNode;
     }
-
+	
+    /******************************************************************************************
+     ******************************************************************************************/ 
     public static Map<String,Object> handleSimpleField(Map<String, Object> newObject, Map<String, Object> newNode, String field){
 
         if(newObject.containsKey(field)){
@@ -265,7 +308,9 @@ public class JSONBuilder {
         System.debug('handleSimpleField newNode -->' + newNode); 
         return newNode;
     }
-
+    
+    /******************************************************************************************
+     ******************************************************************************************/ 
     public static void handleSpecialField(Map<String, Object> newObject, String structure, Object value){
 
         /* Handles the Column : x, Value : y style -- not used anymore...
@@ -289,7 +334,9 @@ public class JSONBuilder {
         newObject.put(secondField, value);
 
     }
-
+	
+    /******************************************************************************************
+     ******************************************************************************************/ 
     //Method that sets system fields - ie. createdDateTime, etc
     public static void addIntegrationSystemFields(Map<String, Object> newObject, ProxyObject__c po){
 

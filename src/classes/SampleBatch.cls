@@ -2,20 +2,16 @@ global class SampleBatch implements Database.Batchable<sObject> {
 	
     global Database.QueryLocator start(Database.BatchableContext bc) {
        	return Database.getQueryLocator(
-            'SELECT Id, FinalJSON__c, JSON__c, Source__c, Type__c FROM ProxyObject__c WHERE Processed__c = False'
+            'SELECT Id, FinalJSON__c, JSON__c, Source__c, Type__c FROM ProxyObject__c'
         ); 
     }
     
     global void execute(Database.BatchableContext bc, List<ProxyObject__c> records){
-        if (records.isEmpty()) {
-            return; 
-        } 
+        System.debug('batch execute method --> ' + records);
+        JSONBuilder.runBuilder(records); 
         
-        for (ProxyObject__c po : records) {
-            
-        }
-        
-        //Non Bulk 
+        //Non Bulk: 
+        //1.Need to update saveToProxy() to be bulkified - be nice to remove it outside of the loop
         /*for (ProxyObject__c po : records) {
             if (String.isNotBlank(po.Type__c) && String.isNotBlank(po.Source__c)) {
                 JSONBuilder.saveToProxy(po.Source__c, po.Type__c); 

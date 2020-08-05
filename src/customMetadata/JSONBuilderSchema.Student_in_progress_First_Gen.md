@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Order__c</field>
-        <value xsi:type="xsd:string">1</value>
+        <value xsi:type="xsd:string">5</value>
     </values>
     <values>
         <field>Position__c</field>
@@ -24,7 +24,7 @@
     </values>
     <values>
         <field>SourceAttribute__c</field>
-        <value xsi:type="xsd:string">In-Prgoress First Gen</value>
+        <value xsi:type="xsd:string">In-Progress First Gen</value>
     </values>
     <values>
         <field>SourceType__c</field>

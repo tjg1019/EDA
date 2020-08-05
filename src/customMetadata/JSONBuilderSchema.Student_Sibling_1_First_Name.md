@@ -12,7 +12,7 @@
     </values>
     <values>
         <field>Order__c</field>
-        <value xsi:type="xsd:string">5</value>
+        <value xsi:type="xsd:string">7</value>
     </values>
     <values>
         <field>Position__c</field>
