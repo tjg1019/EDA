@@ -6,7 +6,6 @@ public class Student extends DynamicProperty{
         return untyped_instance.get(property);  
     }*/ 
     
-    
     public String CommonAppID {get;set;}
 	public String FirstName {get;set;}
 	public String LastName {get;set;}
@@ -17,8 +16,6 @@ public class Student extends DynamicProperty{
 	public Counselor Counselor {get;set;}
 	public Races Races {get;set;}
 	
-    
-    
     public class Counselor {
         public String FirstName;  
         public String LastName; 
