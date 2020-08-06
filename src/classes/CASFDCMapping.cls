@@ -1,9 +1,7 @@
 public class CASFDCMapping {
     
-    public List<String> structures {get;set;}
-    public List<String> objectNames {get;set;}
-    public List<String> fieldNames {get;set;}
-    public List<Object> caValues {get;set;}    
-
-    
+    public String structure {get;set;}
+    public String objectName {get;set;}
+    public String fieldName {get;set;} 
+  
 }

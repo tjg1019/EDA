@@ -12,7 +12,7 @@ public class DataMapper2 {
 
     	String commonAppIdField = checkCommonAppCustomSetting(); 
 
-    	Map<String, CASFDCMapping> masterDataMapping = constructMasterMap(commonAppValuesByField, dataMappingByJSONStructure); 
+    	Map<String,List<CASFDCMapping>> masterDataMapping = constructMasterMap(commonAppValuesByField, dataMappingByJSONStructure); 
         
         checkObjToCreate (masterDataMapping); 
     }
@@ -48,15 +48,26 @@ public class DataMapper2 {
         return commonAppIdField; 
     }
 
-    public static Map<String, CASFDCMapping> constructMasterMap(List<Map<String,Object>> commonAppValuesByField, Map<String, CommonApp_DataMapping__c> dataMappingByJSONStructure) {
-        Map<String, CASFDCMapping> masterMappingMap = new Map<String, CASFDCMapping>(); 
-        CASFDCMapping caMap = new CASFDCMapping(); 
-        caMap.structures = new List<String>(); 
-        caMap.objectNames = new List<String>(); 
-        caMap.fieldNames = new List<String>();
-        caMap.caValues = new List<Object>(); 
+    public static Map<String,List<CASFDCMapping>> constructMasterMap(List<Map<String,Object>> commonAppValuesByField, Map<String, CommonApp_DataMapping__c> dataMappingByJSONStructure) {
+        Map<String,List<CASFDCMapping>> mappingsByObj = new Map<String,List<CASFDCMapping>>(); 
         
-    	if (!commonAppValuesByField.isEmpty()) {
+        for (CommonApp_DataMapping__c dm : dataMappingByJSONStructure.values()) {
+       		CASFDCMapping caMap = new CASFDCMapping();
+            caMap.structure = dm.Structure__c; 
+            caMap.fieldName = dm.Final_Field__c; 
+            caMap.objectName = dm.Final_Object__c; 
+								
+            String objectName = dm.Final_Object__c; 
+            List<CASFDCMapping> existingMaps = new List<CASFDCMapping>(); 
+            if (mappingsByObj.containsKey(objectName)) {
+            	existingMaps = mappingsByObj.get(objectName); 
+           	} 
+            existingMaps.add(caMap); 
+			mappingsByObj.put(dm.Final_Object__c, existingMaps);                             
+            System.debug('mappingsByObj -->' + mappingsByObj);      
+        }
+        
+        /*if (!commonAppValuesByField.isEmpty()) {
     		for (Map<String, Object> checkStud : commonAppValuesByField) {
                 System.debug('checkStud -->' + checkStud); 
     			
@@ -68,34 +79,39 @@ public class DataMapper2 {
                         for (Object caVal : checkStud.values()) {
                             System.debug('caVal -->' + caVal);
                             System.debug('keyCheck2 -->' + key); 
-                            try{
-                                caMap.structures.add(key); 
-                                if (dataMappingByJSONStructure.get(key).Final_Object__c != Null) {
-                                    System.debug('objectCheck -->');
-                                    caMap.objectNames.add(dataMappingByJSONStructure.get(key).Final_Object__c); 
-                            	}
-                                if (dataMappingByJSONStructure.get(key).Final_Field__c != Null) {
-                                    System.debug('FieldCheck -->');
-                                    caMap.fieldNames.add(dataMappingByJSONStructure.get(key).Final_Field__c);
-                                }
-                                caMap.caValues.add(caVal);
-                                masterMappingMap.put(key, caMap); 
-                            } catch (Exception e) {
-                                System.debug('exception Error -->' + e.getMessage() + ' = ' + e.getLineNumber()); 
-                            }
+                                CASFDCMapping caMap = new CASFDCMapping();
+                                caMap.structure = key; 
+                                caMap.fieldName = dataMappingByJSONStructure.get(key).Final_Field__c; 
+                                caMap.objectName  = dataMappingByJSONStructure.get(key).Final_Object__c; 
+								
+                            	String objectName  = dataMappingByJSONStructure.get(key).Final_Object__c; 
+                            	List<CASFDCMapping> existingMaps = new List<CASFDCMapping>(); 
+                                if (mappingsByObj.containsKey(objectName)) {
+                                    existingMaps = mappingsByObj.get(objectName); 
+                                } 
+                                existingMaps.add(caMap); 
+								mappingsByObj.put(dataMappingByJSONStructure.get(key).Final_Object__c, existingMaps);                             
+                            
     					} 
                     }    
     			}
     		}
-    	}
-        System.debug('caMap -->' + caMap); 
-    	return masterMappingMap; 
+    	}*/ 
+        System.debug('mappingsByObj -->' + mappingsByObj.get('Contact')); 
+    	return mappingsByObj; 
     }
     
-    public static void checkObjToCreate(Map<String, CASFDCMapping> masterMappingMap) {
+    public static void checkObjToCreate(Map<String,List<CASFDCMapping>> masterMappingMap) {
+        Map<String,Map<String,Object>> contactValuesForContact = new Map<String,Map<String,Object>>(); 
         //Group by Object to create
         for (String caKey : masterMappingMap.keySet()) {
-
+            /*for (CASFDCMapping valObj : masterMappingMap.values()) {
+                for (String jsonStr : valObj.structures) {
+                    if (jsonStr == caKey) {
+                        //contactValuesForContact.put(masterMappingMap.get(caKey));
+                    }
+                }
+            }*/ 
         }
         
     }
