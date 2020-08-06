@@ -45,6 +45,7 @@
         <members>BEH_CannotDelete_TEST</members>
         <members>CASE_CannotDelete_TDTM</members>
         <members>CASE_CannotDelete_TEST</members>
+        <members>CASFDCMapping</members>
         <members>CCON_CannotDelete_TDTM</members>
         <members>CCON_CannotDelete_TEST</members>
         <members>CCON_ConnectionBackfill_BATCH</members>
@@ -93,6 +94,7 @@
         <members>CustomMetadataUploadController</members>
         <members>CustomMetadataUploadControllerTest</members>
         <members>DataMapper</members>
+        <members>DataMapper2</members>
         <members>DynamicProperty</members>
         <members>ERR_AsyncErrors</members>
         <members>ERR_AsyncErrors_SCHED</members>

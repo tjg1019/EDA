@@ -217,12 +217,12 @@ public class DataMapper {
         }
         
         
-        /*if (schemaMapperBySourceAttribute.containsKey ('FirstGen.InProgress')) {
+        if (schemaMapperBySourceAttribute.containsKey ('FirstGen.InProgress')) {
         	c.Contact_JSON__c = 'FirstGen-InProgress: ' + (String)newFakeStud.FirstGen.InProgress; 
         } 
         if (schemaMapperBySourceAttribute.containsKey ('FirstGen.Submitted')) {
             c.Contact_JSON__c = 'FirstGen-Submitted: ' + (String)newFakeStud.FirstGen.InProgress; 
-        }*/ 
+        }
         
         
         consToInsert.add(c); 
