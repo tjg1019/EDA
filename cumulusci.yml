@@ -265,7 +265,7 @@ flows:
             5:
                 task: execute_qa_apex
             6:
-                task: deploy_qa_config
+                task: deploy_trial_config
 
     config_regression:
         # description: Configure an org for QA regression after the package is installed.
@@ -276,7 +276,7 @@ flows:
                     managed: True
                     namespaced: True
             3:
-                task: deploy_qa_config
+                task: deploy_trial_config
                 options:
                     unmanaged: False
 
@@ -322,7 +322,7 @@ flows:
                     managed: True
                     namespaced: True
             3:
-                task: deploy_qa_config
+                task: deploy_trial_config
                 options:
                     unmanaged: False
 
