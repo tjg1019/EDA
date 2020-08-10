@@ -2,7 +2,6 @@ public class DataMapper2 {
 
 	public static void testRun() {
         List<Map<String,Object>> rawStudentsData = JSONBuilder.runBuilder('CommonApp', 'Student'); 
-        
         main(rawStudentsData); 
     }
 
@@ -16,14 +15,17 @@ public class DataMapper2 {
         
         List<Student> parsedStudents = convertRawJSONStudentDataToStudents(rawStudentsData); 
         
-        List<SObject> sObjList = buildStudentContacts(parsedStudents, caMappingByObj); 
+        List<SObject> sObjList = constructObjectsFromMapping('Contact', parsedStudents, caMappingByObj); 
+        
+        insertNewRecords(sObjList); 
     }
 
     public static Map<String, CommonApp_DataMapping__c> retrieveDataMappingObj() {
         Map<String, CommonApp_DataMapping__c> dataMappingByJSONStructure = new Map<String, CommonApp_DataMapping__c>(); 
         
         List<CommonApp_DataMapping__c> dataMappingList = [SELECT Id, Name, Structure__c, 
-        													Final_Object__c, Final_Field__c, Mapped_to__c 
+        													Final_Object__c, Final_Field__c, Mapped_to__c,
+                                                          	Repeat_Action__c
                                                           	FROM CommonApp_DataMapping__c]; 
 
         for (CommonApp_DataMapping__c cd : dataMappingList) {
@@ -58,6 +60,7 @@ public class DataMapper2 {
             caMap.structure = dm.Structure__c; 
             caMap.fieldName = dm.Final_Field__c; 
             caMap.objectName = dm.Final_Object__c; 
+            caMap.repeatAction = dm.Repeat_Action__c; 
 								
             String objectName = dm.Final_Object__c; 
             List<CASFDCMapping> existingMaps = new List<CASFDCMapping>(); 
@@ -72,7 +75,6 @@ public class DataMapper2 {
     	return mappingsByObj; 
     }
     
-    //TODO: Create a method that processes the rawStudentData to the Student object(cls) --> This will return a list of students.cls 
     public static List<Student> convertRawJSONStudentDataToStudents(List<Map<String,Object>> rawStudentsData) {
         List<Student> parsedStudents = new List<Student>(); 
         
@@ -84,13 +86,6 @@ public class DataMapper2 {
         return parsedStudents; 
     }
     
-    //TODO: Return a list of in memory constructed contacts. --> Non generic version of constructObjectsFromMapping I think 
-    public static List<Contact> buildStudentContacts(List<Student> parsedStudents, Map<String,List<CASFDCMapping>> caMappingByObj){
-        for (Student newStud : parsedStudents) {
-            
-        }
-        return constructObjectsFromMapping('Contact', parsedStudents, caMappingByObj);
-    }
     
     //TODO: Generic Function to construct objects given a objectname to read out of the Mapping and given the student data to load on to the new obj
     public static List<SObject> constructObjectsFromMapping(String objectName, List<Student> parsedStudents, Map<String,List<CASFDCMapping>> caMappingByObj) {
@@ -98,49 +93,64 @@ public class DataMapper2 {
         
         List<CASFDCMapping> masterMapping = caMappingByObj.get(objectName); 
         for (Student newStud : parsedStudents) {
-        	SObject newObj = Schema.getGlobalDescribe().get(objectName).newSObject(); //Cast into Contact SOBject - ie. Contact c = new Contact(): 
+            SObject newObj = Schema.getGlobalDescribe().get(objectName).newSObject(); //Contact{} Cast into Contact SOBject - ie. Contact c = new Contact(): 
+            System.debug('whatObject -->' + newObj); 
             for (CASFDCMapping jsonKey2Field : masterMapping) { //Loop through the masterMapping to retrieve the structure/Field 
            		System.debug('jsonKey2Field -->' + jsonKey2Field); //[fieldName=Contact_JSON__c, objectName=Contact, structure=GenderIdentity]
+                
                 String keyString = (String)jsonKey2Field.structure; 
-                System.debug('keyString -->' + keyString);
-               	//Object jsonKeyOnStudentAsString = Student.getProperty(keyString); 
-            	  
+                System.debug('keyString -->' + keyString); 
+                
+                //Check if the Structure does not contain special character 
+                if (keyString.containsNone('.') && keyString.containsNone('[')) {
+                    System.debug('keyString DoesNotContainSpecialChar -->' + keyString); //FirstName, LastName, GenderIdentity, etc. 
+                    Object jsonKeyOnStudentAsString = newStud.getProperty(keyString); //Returns the value of FirstName, LastName, GenderIdentity, etc. 
+                    System.debug('jsonKeyOnStudentAsString -->' + jsonKeyOnStudentAsString);
+                   	System.debug('checktheFieldName ---> ' + jsonKey2Field.fieldName); //Contact_JSON__c 
+                    
+                    //Set the Contact fields with the value from jsonKeyOnStudentAsString 
+                    if (newObj != NULL) {
+                        newObj.put(jsonKey2Field.fieldName, jsonKeyOnStudentAsString); 
+                        System.debug('newObj is notnull2 -->' + newObj); 
+                    } 
+                } else {
+                    System.debug('keyString ContainsSpecialChar -->' + keyString);
+                } 
             }
+            constructedListOfObj.add(newObj); 
         }
-        
-        /*
-         * list<CASFDCMapping> mapping = caMappingByObj.get(objectName)
-         * for student in processedStudents:
-         *    SObject conObj = Schema.getGlobalDescribe().get(objectName).newSObject();  ==> Contact c = new COntact(); 
-         *    for (CASFDCMapping str2Field : mapping) {
-            	Object strValue = student.getProperty(str2Field.structure__c); 
-                //conObj.firstname = student.firstname				
-                //conObj.last = student.last
-				str2Field.Final_Field__c //figure out how to dynamically set the final_field__c's value as the contact field
-               }
-         * 
-         * 
-         */
-        
-        
+       
         return constructedListOfObj; 
     }
-
-    //TODO: This method should loop through the processed StudentData  
+	
+    public static void insertNewRecords(List<SObject> sObjList) {
+        Database.insert(sObjList); 
+    }
+    
+    /*
+    TODO: This method should loop through the processed StudentData  
     public static void constructIndividualStudentContact(CASFDCMapping caDataMappingForContact) {
-		//Loop through the student object to check if the CASFDCMapping exist in the student obj 
+		Loop through the student object to check if the CASFDCMapping exist in the student obj 
 		Student checkStudentObj = new Student(); 
         
-        /*for (CASFDCMapping fieldMapping : caDataMappingForContact) {
+        for (CASFDCMapping fieldMapping : caDataMappingForContact) {
             System.debug('fieldMapping -->' + fieldMapping.structure); 
             String keyString = (String)fieldMapping.structure; 
             Object valReturn = checkStudentObj.getProperty(keyString);
             System.debug('valReturn -->' + valReturn); 
-        }*/
+        }
         
     }
     
-       //TODO: Potentially delete this method - TBD 
+ 	//TODO: Return a list of in memory constructed contacts. --> Non generic version of constructObjectsFromMapping I think 
+    public static List<Contact> buildStudentContacts(List<Student> parsedStudents, Map<String,List<CASFDCMapping>> caMappingByObj){
+        for (Student newStud : parsedStudents) {
+            
+        }
+        return constructObjectsFromMapping('Contact', parsedStudents, caMappingByObj);
+    }
+
+    //TODO: Potentially delete this method - TBD 
     public static void constructMappingList(Map<String,List<CASFDCMapping>> caMappingByObj) {
 		List<CASFDCMapping> caDataMappingForContact = new List<CASFDCMapping>(); 
         
@@ -154,6 +164,6 @@ public class DataMapper2 {
         }
         
         if (caMappingByObj.containsKey('Application__c')){}
-    }
+    }*/ 
     
 }

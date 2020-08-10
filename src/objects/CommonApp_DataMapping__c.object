@@ -254,6 +254,31 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Repeat_Action__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For CA fields that are repeated which is denoted with [X] determine if we create new record or append.</inlineHelpText>
+        <label>Repeat Action</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Append</fullName>
+                    <default>false</default>
+                    <label>Append</label>
+                </value>
+                <value>
+                    <fullName>New Record</fullName>
+                    <default>false</default>
+                    <label>New Record</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>Structure__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>Structure name for this Common App field</inlineHelpText>

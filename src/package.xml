@@ -405,6 +405,7 @@
         <members>CommonApp_DataMapping__c.Final_Field__c</members>
         <members>CommonApp_DataMapping__c.Final_Object__c</members>
         <members>CommonApp_DataMapping__c.Mapped_to__c</members>
+        <members>CommonApp_DataMapping__c.Repeat_Action__c</members>
         <members>CommonApp_DataMapping__c.Structure__c</members>
         <members>CommonApp_Integration_Setup__c.Common_App_ID__c</members>
         <members>Contact.AlternateEmail__c</members>
@@ -704,9 +705,12 @@
     <types>
         <members>JSONBuilderSchema.Student_Common_App_ID</members>
         <members>JSONBuilderSchema.Student_Counselor_First_Name</members>
+        <members>JSONBuilderSchema.Student_Counselor_Last_Name</members>
         <members>JSONBuilderSchema.Student_FirstName</members>
         <members>JSONBuilderSchema.Student_Gender_Identity</members>
         <members>JSONBuilderSchema.Student_LastName</members>
+        <members>JSONBuilderSchema.Student_Parent_1_First_Name</members>
+        <members>JSONBuilderSchema.Student_Parent_1_Last_Name</members>
         <members>JSONBuilderSchema.Student_Sibling_1_First_Name</members>
         <members>JSONBuilderSchema.Student_Sibling_1_Last_Name</members>
         <members>JSONBuilderSchema.Student_Sibling_2_First_Name</members>
